@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="object"><h1><a href="/v2/doc">API</a>: NewsFeedItem</h1><div class="description"><p>Each <a href="/v2/doc/objects/NewsFeedItem.html">NewsFeedItem</a> is an action displayed in the user&#39;s feed. They have a discrete <code>action</code>, which determines how the other fields are interpreted. They can also include explanatory human_readable <code>text</code>, and links to other users, guest users, videos, and tags involved. For example, user Aphyr might be notified that his friend Spencer is following Dandelion Salad. The item in Aphyr&#39;s feed would have action &#39;follow_user&#39;, user &#39;spencer&#39;, and user2 &#39;dandelionsalad&#39;.</p>
+
+<p>NewsFeedItems are sorted in reverse chronological order, by default. Their effective date is <code>created_at</code>.</p></div><div class="attributes"><h2>Attributes</h2><dl><dt>action</dt><dd><p>The meaning of this feed item--e.g. &quot;follow_user&quot; or &quot;add_video&quot;.</p></dd><dt>collection_video</dt><dd><p>The <a href="/v2/doc/objects/CollectionVideo.html">CollectionVideo</a> associated with this action.</p></dd><dt>created_at</dt><dd><p>When the action happened.</p></dd><dt>group</dt><dd><p>The <a href="/v2/doc/objects/Group.html">Group</a> associated with this action.</p></dd><dt>guest_user</dt><dd><p>The <a href="/v2/doc/objects/GuestUser.html">GuestUser</a> associated with this action.</p></dd><dt>key</dt><dd><p>The unique integer ID of this action.</p></dd><dt>owner</dt><dd><p>The <a href="/v2/doc/objects/User.html">User</a> whose feed this item belongs in.</p></dd><dt>tag</dt><dd><p>The <a href="/v2/doc/objects/Tag.html">Tag</a> associated with this action.</p></dd><dt>text</dt><dd><p>Human-readable explanatory text.</p></dd><dt>user</dt><dd><p>The <a href="/v2/doc/objects/User.html">User</a> associated with this action.</p></dd><dt>user2</dt><dd><p>If the <code>user</code> does something involving another <a href="/v2/doc/objects/User.html">User</a>, this field is the subject.</p></dd><dt>video</dt><dd><p>The <a href="/v2/doc/objects/Video.html">Video</a> associated with this action.</p></dd></dl><div class="clear"></div></div></div></div></body></html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /videos/&lt;key&gt;/comments/new</h1><div class="description"><p>With an HTTP POST, creates a <a href="/v2/doc/objects/Comment.html">Comment</a> on the video in question. This comment is made by your user account and will appear on Vodpod.com. It may be retrieved with &lt;video&gt;/comments.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>auth_key</dt><dd>Auth key.</dd><dt>text</dt><dd>The text of the comment (required).</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/videos/2901977/comments/new?auth_key=xxx&amp;text=An+awesome+video</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;collection_comment&gt;
+  &lt;text&gt;An awesome video&lt;/text&gt;
+  &lt;key&gt;1234&lt;/key&gt;
+  &lt;approved&gt;true&lt;/approved&gt;
+  &lt;user&gt;
+    &lt;name&gt;Aphyr&lt;/name&gt;
+    &lt;url&gt;http://aphyr.com&lt;/url&gt;
+    &lt;key&gt;aphyr&lt;/key&gt;
+    &lt;created_at&gt;2010-03-02T11:07:54-08:00&lt;/created_at&gt;
+    &lt;thumbnail&gt;http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;amp;size=60&amp;amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif&lt;/thumbnail&gt;
+  &lt;/user&gt;
+&lt;/collection_comment&gt;</pre></code></td><td class="json"><code><pre>{&quot;created_at&quot;=&gt;&quot;2010-03-02T11:07:54-08:00&quot;,
+ &quot;text&quot;=&gt;&quot;An awesome video&quot;,
+ &quot;key&quot;=&gt;1234,
+ &quot;approved&quot;=&gt;true,
+   &quot;user&quot;=&gt;
+  {&quot;name&quot;=&gt;&quot;Aphyr&quot;,
+   &quot;created_at&quot;=&gt;&quot;2010-03-02T11:07:54-08:00&quot;,
+   &quot;thumbnail&quot;=&gt;
+    &quot;http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;size=60&amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif&quot;,
+   &quot;url&quot;=&gt;&quot;http://aphyr.com&quot;,
+   &quot;key&quot;=&gt;&quot;aphyr&quot;}}</pre></code></td></tr></table></div></div></body></html>

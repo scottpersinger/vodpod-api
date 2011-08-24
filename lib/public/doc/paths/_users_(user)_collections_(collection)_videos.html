@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;/collections/&lt;collection&gt;/videos</h1><div class="description"><p>A list of <a href="/v2/doc/objects/Video.html">Videos</a> within a collection.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd><dt>limit</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>offset</dt><dd>How far into the result set to begin returning objects. Offset 0 returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...</dd><dt>order</dt><dd>One of <code>asc</code> or <code>desc</code>, for ascending and descending sort orders, respectively.</dd><dt>page</dt><dd>The page of the results to return. If <code>offset</code> is provided, it takes precedence over <code>page</code>.</dd><dt>per_page</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>sort</dt><dd>The name of an attribute to sort by. Only certain columns are sortable; see the object&#39;s documentation for details.</dd><dt>tag</dt><dd>A tag to filter the resulting videos by.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/users/aphyr/collections/aphyr/videos?include=tags&amp;limit=2</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;videos total=&quot;348&quot;&gt;
+  &lt;collection_video&gt;
+    &lt;autoplay_embed&gt;&amp;lt;embed allowfullscreen=&quot;false&quot; allowscriptaccess=&quot;never&quot; wmode=&quot;transparent&quot; src=&quot;http://www.funnyordie.com/p/0364784775&quot; flashvars=&quot;autoPlay=true&amp;amp;autoplay=true&amp;amp;autoStart=1&amp;amp;ap=1&amp;amp;autoplay=1&amp;amp;ip=true&amp;amp;autostart=true&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;100%&quot; height=&quot;100%&quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/6601794/517426/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/autoplay_embed&gt;
+    &lt;created_at&gt;2010-10-11T11:02:30-07:00&lt;/created_at&gt;
+    &lt;description&gt;An oldy, but a goodie! &quot;Hey, we&#39;ve got more places than we&#39;ve got stuff... We&#39;re going to have to buy more stuff!&quot;&lt;/description&gt;
+    &lt;embed&gt;&amp;lt;embed allowfullscreen=&quot;false&quot; allowscriptaccess=&quot;never&quot; wmode=&quot;transparent&quot; src=&quot;http://www.funnyordie.com/p/0364784775&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;100%&quot; height=&quot;100%&quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/6601794/517426/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/embed&gt;
+    &lt;key&gt;3432529&lt;/key&gt;
+    &lt;media/&gt;
+    &lt;media_240_mobile/&gt;
+    &lt;media_480_web/&gt;
+    &lt;recommends&gt;0&lt;/recommends&gt;
+    &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.videos.thumbnail/3432529.medium100.jpg&lt;/thumbnail&gt;
+    &lt;title&gt;George Carlin - Stuff&lt;/title&gt;
+    &lt;total_views&gt;0&lt;/total_views&gt;
+    &lt;url&gt;http://vodpod.com/watch/3432529-george-carlin-stuff?u=aphyr&amp;amp;c=aphyr&lt;/url&gt;
+    &lt;video_host&gt;
+      &lt;domain&gt;funnyordie.com&lt;/domain&gt;
+      &lt;url&gt;http://www.funnyordie.com/videos/0364784775/george-carlin-stuff-from-classicstandupfan&lt;/url&gt;
+      &lt;description&gt;George Carlin standup. ... Watch videos about George Carlin, Standup comedy, stuff, shit, house, funny on FunnyOrDie.com&lt;/description&gt;
+    &lt;/video_host&gt;
+    &lt;tags/&gt;
+  &lt;/collection_video&gt;
+  &lt;collection_video&gt;
+    &lt;autoplay_embed&gt;&amp;lt;embed wmode=&quot;transparent&quot; src=&quot;http://vodpod.com/jwplayer.swf&quot; width=&quot;100%&quot; height=&quot;100%&quot; allowscriptaccess=&quot;never&quot; allowfullscreen=&quot;false&quot; type=&quot;application/x-shockwave-flash&quot; id=&quot;flvplayer&quot; flashvars=&quot;file=http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&amp;amp;image=http://assets.vpimg.net/images/missing_video_100.gif&amp;amp;skin=http://vodpod.com/stylish.swf&amp;amp;backcolor=333333&amp;amp;frontcolor=cccccc&amp;amp;lightcolor=66cc00&amp;amp;autostart=true&amp;amp;autoPlay=true&amp;amp;autoplay=true&amp;amp;autoStart=1&amp;amp;ap=1&amp;amp;autoplay=1&amp;amp;ip=true&amp;amp;autostart=true&quot; /&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/6601740/517426/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/autoplay_embed&gt;
+    &lt;created_at&gt;2010-09-30T16:58:44-07:00&lt;/created_at&gt;
+    &lt;description&gt;Test video from Thu Sep 30 16:58:44 -0700 2010&lt;/description&gt;
+    &lt;embed&gt;&amp;lt;embed wmode=&quot;transparent&quot; src=&quot;http://vodpod.com/jwplayer.swf&quot; width=&quot;100%&quot; height=&quot;100%&quot; allowscriptaccess=&quot;never&quot; allowfullscreen=&quot;false&quot; type=&quot;application/x-shockwave-flash&quot; id=&quot;flvplayer&quot; flashvars=&quot;file=http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&amp;amp;image=http://assets.vpimg.net/images/missing_video_100.gif&amp;amp;skin=http://vodpod.com/stylish.swf&amp;amp;backcolor=333333&amp;amp;frontcolor=cccccc&amp;amp;lightcolor=66cc00&amp;amp;autostart=false&quot; /&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/6601740/517426/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/embed&gt;
+    &lt;key&gt;4254289&lt;/key&gt;
+    &lt;media&gt;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&lt;/media&gt;
+    &lt;media_240_mobile&gt;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.240_mobile.mp4&lt;/media_240_mobile&gt;
+    &lt;media_480_web&gt;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.480_web.mp4&lt;/media_480_web&gt;
+    &lt;recommends&gt;0&lt;/recommends&gt;
+    &lt;thumbnail&gt;http://assets.vpimg.net/images/missing_video_100.gif&lt;/thumbnail&gt;
+    &lt;title&gt;Droid video&lt;/title&gt;
+    &lt;total_views&gt;0&lt;/total_views&gt;
+    &lt;url&gt;http://vodpod.com/watch/4254289-droid-video?u=aphyr&amp;amp;c=aphyr&lt;/url&gt;
+    &lt;video_host&gt;
+      &lt;domain/&gt;
+      &lt;url/&gt;
+      &lt;description/&gt;
+    &lt;/video_host&gt;
+    &lt;tags&gt;
+      &lt;tag&gt;
+        &lt;key&gt;test&lt;/key&gt;
+        &lt;name&gt;test&lt;/name&gt;
+      &lt;/tag&gt;
+      &lt;tag&gt;
+        &lt;key&gt;android&lt;/key&gt;
+        &lt;name&gt;android&lt;/name&gt;
+      &lt;/tag&gt;
+      &lt;tag&gt;
+        &lt;key&gt;api&lt;/key&gt;
+        &lt;name&gt;api&lt;/name&gt;
+      &lt;/tag&gt;
+    &lt;/tags&gt;
+  &lt;/collection_video&gt;
+&lt;/videos&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;results&quot;: [
+      {
+        &quot;autoplay_embed&quot;: &quot;&lt;embed allowfullscreen=\&quot;false\&quot; allowscriptaccess=\&quot;never\&quot; wmode=\&quot;transparent\&quot; src=\&quot;http://www.funnyordie.com/p/0364784775\&quot; flashvars=\&quot;autoPlay=true&amp;autoplay=true&amp;autoStart=1&amp;ap=1&amp;autoplay=1&amp;ip=true&amp;autostart=true\&quot; type=\&quot;application/x-shockwave-flash\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot;&gt;&lt;/embed&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/6601794/517426/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+        &quot;total_views&quot;: 0,
+        &quot;recommends&quot;: 0,
+        &quot;created_at&quot;: &quot;2010-10-11T11:02:30-07:00&quot;,
+        &quot;title&quot;: &quot;George Carlin - Stuff&quot;,
+        &quot;video_host&quot;: {
+          &quot;url&quot;: &quot;http://www.funnyordie.com/videos/0364784775/george-carlin-stuff-from-classicstandupfan&quot;,
+          &quot;domain&quot;: &quot;funnyordie.com&quot;,
+          &quot;description&quot;: &quot;George Carlin standup. ... Watch videos about George Carlin, Standup comedy, stuff, shit, house, funny on FunnyOrDie.com&quot;
+        },
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.videos.thumbnail/3432529.medium100.jpg&quot;,
+        &quot;url&quot;: &quot;http://vodpod.com/watch/3432529-george-carlin-stuff?u=aphyr&amp;c=aphyr&quot;,
+        &quot;tags&quot;: [
+
+        ],
+        &quot;media_240_mobile&quot;: null,
+        &quot;media&quot;: null,
+        &quot;media_480_web&quot;: null,
+        &quot;embed&quot;: &quot;&lt;embed allowfullscreen=\&quot;false\&quot; allowscriptaccess=\&quot;never\&quot; wmode=\&quot;transparent\&quot; src=\&quot;http://www.funnyordie.com/p/0364784775\&quot; type=\&quot;application/x-shockwave-flash\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot;&gt;&lt;/embed&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/6601794/517426/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+        &quot;description&quot;: &quot;An oldy, but a goodie! \&quot;Hey, we&#39;ve got more places than we&#39;ve got stuff... We&#39;re going to have to buy more stuff!\&quot;&quot;,
+        &quot;key&quot;: 3432529
+      },
+      {
+        &quot;autoplay_embed&quot;: &quot;&lt;embed wmode=\&quot;transparent\&quot; src=\&quot;http://vodpod.com/jwplayer.swf\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; allowscriptaccess=\&quot;never\&quot; allowfullscreen=\&quot;false\&quot; type=\&quot;application/x-shockwave-flash\&quot; id=\&quot;flvplayer\&quot; flashvars=\&quot;file=http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&amp;image=http://assets.vpimg.net/images/missing_video_100.gif&amp;skin=http://vodpod.com/stylish.swf&amp;backcolor=333333&amp;frontcolor=cccccc&amp;lightcolor=66cc00&amp;autostart=true&amp;autoPlay=true&amp;autoplay=true&amp;autoStart=1&amp;ap=1&amp;autoplay=1&amp;ip=true&amp;autostart=true\&quot; /&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/6601740/517426/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+        &quot;total_views&quot;: 0,
+        &quot;recommends&quot;: 0,
+        &quot;created_at&quot;: &quot;2010-09-30T16:58:44-07:00&quot;,
+        &quot;title&quot;: &quot;Droid video&quot;,
+        &quot;video_host&quot;: {
+          &quot;url&quot;: null,
+          &quot;domain&quot;: null,
+          &quot;description&quot;: null
+        },
+        &quot;thumbnail&quot;: &quot;http://assets.vpimg.net/images/missing_video_100.gif&quot;,
+        &quot;url&quot;: &quot;http://vodpod.com/watch/4254289-droid-video?u=aphyr&amp;c=aphyr&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;name&quot;: &quot;test&quot;,
+            &quot;key&quot;: &quot;test&quot;
+          },
+          {
+            &quot;name&quot;: &quot;android&quot;,
+            &quot;key&quot;: &quot;android&quot;
+          },
+          {
+            &quot;name&quot;: &quot;api&quot;,
+            &quot;key&quot;: &quot;api&quot;
+          }
+        ],
+        &quot;media_240_mobile&quot;: &quot;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.240_mobile.mp4&quot;,
+        &quot;media&quot;: &quot;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&quot;,
+        &quot;media_480_web&quot;: &quot;http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.480_web.mp4&quot;,
+        &quot;embed&quot;: &quot;&lt;embed wmode=\&quot;transparent\&quot; src=\&quot;http://vodpod.com/jwplayer.swf\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; allowscriptaccess=\&quot;never\&quot; allowfullscreen=\&quot;false\&quot; type=\&quot;application/x-shockwave-flash\&quot; id=\&quot;flvplayer\&quot; flashvars=\&quot;file=http://s3.amazonaws.com/vodpod.com.videos.media.dev/4254289.mp4&amp;image=http://assets.vpimg.net/images/missing_video_100.gif&amp;skin=http://vodpod.com/stylish.swf&amp;backcolor=333333&amp;frontcolor=cccccc&amp;lightcolor=66cc00&amp;autostart=false\&quot; /&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/6601740/517426/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+        &quot;description&quot;: &quot;Test video from Thu Sep 30 16:58:44 -0700 2010&quot;,
+        &quot;key&quot;: 4254289
+      }
+    ],
+    &quot;total&quot;: 348
+  }
+]</pre></code></td></tr></table></div></div></body></html>

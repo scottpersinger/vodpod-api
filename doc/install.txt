@@ -1,0 +1,3 @@
+sudo apt-get install libxml2-dev libmysqlclient16-dev
+sudo gem install mysql --source http://gems.rubyinstaller.org
+sudo gem install vodpod-api thin

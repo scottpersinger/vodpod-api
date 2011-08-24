@@ -1,0 +1,25 @@
+GENERAL
+-------
+Docs
+
+DEPRECATED
+----------
+
+BUGS
+--------
+User search is not restricting properly.
+Collection search is broken.
+/users/aphyr/video/231 404
+
+SECURITY
+--------
+
+PERFORMANCE
+-----------
+caching
+
+DEPLOYMENT
+----------
+kyle, for techcrunch.vodspot.tv/robots.txt and 
+                      techcrunch2.vodspot.tv/robots.txt can you point them to 
+                      ~/svn/showyou/public/tcrobots.txt

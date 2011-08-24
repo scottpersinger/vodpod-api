@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'irb'
+require 'irb/completion'
+require 'pp'
+
+require File.expand_path("#{File.dirname(__FILE__)}/../lib/vodpod-api")
+API.load
+require "api/adapter"
+
+# IRB monkeypatch to let us load a custom context object
+class IRB::Irb
+  alias initialize_orig initialize
+  def initialize(workspace = nil, *args)
+    default = IRB.conf[:DEFAULT_OBJECT]
+    workspace ||= IRB::WorkSpace.new default if default
+    initialize_orig(workspace, *args)
+  end
+end
+
+# Load session
+begin 
+  IRB.conf[:DEFAULT_OBJECT] = API
+rescue => e
+  puts "Error"
+end
+
+IRB.start

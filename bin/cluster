@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+
+WORKERS = 6
+PORT = 8000
+
+# Runs multiple APIs in concert.
+SCRIPT = File.join(File.dirname(__FILE__), 'vodpod-api')
+
+def start_worker(n)
+  fork do
+    exec "#{SCRIPT} start -p #{PORT + n}"
+  end
+end
+
+def run
+  puts "Supervisor is #{Process.pid}"
+
+  @workers = (0...WORKERS).map do |n|
+    start_worker n
+  end
+
+  trap 'TERM' do
+    @workers.each do |pid|
+      begin
+        Process.kill('TSTP', pid)
+      rescue
+        Process.kill('KILL', pid) rescue nil
+      end
+    end
+
+    Process.waitall
+    exit
+  end
+
+  trap 'HUP' do
+    @workers.each do |pid|
+      Process.kill('TSTP', pid)
+    end
+  end
+
+  loop do
+    sleep 2
+    @workers.each_with_index do |pid, n|
+      begin
+        Process.waitpid(pid, Process::WNOHANG)
+        if $?
+          puts "Worker #{n} (#{pid}) exited with #{$?.inspect}"
+          raise
+        end
+      rescue
+        # Worker died
+        @workers[n] = start_worker(n)
+      end
+    end
+  end
+end
+
+run

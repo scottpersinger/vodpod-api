@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;</h1><div class="description"><p>Returns a specific <a href="/v2/doc/objects/Video.html">Video</a> in the context of a collection. Instead of the canonical title and description, returns the title and description the collector assigned. <code>key</code> is the numeric video key.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/users/spencer/collections/electro/videos/381539?include=tags</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;collection_video&gt;
+  &lt;autoplay_embed&gt;&amp;lt;embed wmode=&quot;transparent&quot; allowfullscreen=&quot;false&quot; type=&quot;application/x-shockwave-flash&quot; src=&quot;http://www.dailymotion.com/swf/2liZ0bAuB6RHiiT1E&amp;amp;autoPlay=1&quot; flashvars=&quot;autoPlay=1&quot; allowscriptaccess=&quot;never&quot; height=&quot;100%&quot; width=&quot;100%&quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/1395238/23565/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/autoplay_embed&gt;
+  &lt;created_at&gt;2008-07-15T17:44:01-07:00&lt;/created_at&gt;
+  &lt;description&gt;&lt;/description&gt;
+  &lt;embed&gt;&amp;lt;embed wmode=&quot;transparent&quot; allowfullscreen=&quot;false&quot; type=&quot;application/x-shockwave-flash&quot; src=&quot;http://www.dailymotion.com/swf/2liZ0bAuB6RHiiT1E&quot; allowscriptaccess=&quot;never&quot; height=&quot;100%&quot; width=&quot;100%&quot;&amp;gt;&amp;lt;/embed&amp;gt;&amp;lt;img src=&quot;http://stats.vodpod.com/stats/external_view/1395238/23565/0/pod.gif&quot; width=&quot;1&quot; height=&quot;1&quot; style=&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;&quot; /&amp;gt;&lt;/embed&gt;
+  &lt;key&gt;381539&lt;/key&gt;
+  &lt;media/&gt;
+  &lt;media_240_mobile/&gt;
+  &lt;media_480_web/&gt;
+  &lt;recommends&gt;4&lt;/recommends&gt;
+  &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.videos.thumbnail/381539.medium100.jpg&lt;/thumbnail&gt;
+  &lt;title&gt;Boys Noize @ Electromind 2007&lt;/title&gt;
+  &lt;total_views&gt;82&lt;/total_views&gt;
+  &lt;url&gt;http://vodpod.com/watch/381539-boys-noize-electromind-2007?u=spencer&amp;amp;c=electro&lt;/url&gt;
+  &lt;video_host&gt;
+    &lt;domain/&gt;
+    &lt;url/&gt;
+    &lt;description&gt;Video report du Festival Electromind 2007 a Montpellier.21 juillet 2007 
+BOYS NOIZE Live... terriblement efficace... 
+Extraits de ce qui passait sur l&#39;�an de 8 x 6m sur le cot�e la grande scene- captations   visuels   
+The audiovisual Boys noize set @ Electromind - Live feed cameras mixed with visuals - exactly what was on the giant screen nearby the big stage... 
+un travail d&#39;�ipe avec 4 vjs : BLINDOFF, TXAMPA et XRAY Concept qui a permit au public vraiment nombreux de voir un peu ce qui se passait tout en b�ficiant d&#39;animations visuelles. 
+La deco: ABRAKADABRA 
+Liens : 
+http://www.electromind.fr 
+http://www.boysnoize.com/ 
+http://www.myspace.com/boysnoizerecords 
+http://www.myspace.com/boysnoizemusic 
+http://www.vjxray.com 
+http://www.myspace.com/blindoff 
+http://www.txampa.com/ 
+Xray Concept is powered by Vixid &amp;amp; M-Audio 
+http://www.vixid.com   
+http://www.m-audio.fr&lt;/description&gt;
+  &lt;/video_host&gt;
+  &lt;tags&gt;
+    &lt;tag&gt;
+      &lt;key&gt;boys noize&lt;/key&gt;
+      &lt;name&gt;boys noize&lt;/name&gt;
+    &lt;/tag&gt;
+    &lt;tag&gt;
+      &lt;key&gt;techno&lt;/key&gt;
+      &lt;name&gt;techno&lt;/name&gt;
+    &lt;/tag&gt;
+    &lt;tag&gt;
+      &lt;key&gt;electro&lt;/key&gt;
+      &lt;name&gt;electro&lt;/name&gt;
+    &lt;/tag&gt;
+  &lt;/tags&gt;
+&lt;/collection_video&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;autoplay_embed&quot;: &quot;&lt;embed wmode=\&quot;transparent\&quot; allowfullscreen=\&quot;false\&quot; type=\&quot;application/x-shockwave-flash\&quot; src=\&quot;http://www.dailymotion.com/swf/2liZ0bAuB6RHiiT1E&amp;autoPlay=1\&quot; flashvars=\&quot;autoPlay=1\&quot; allowscriptaccess=\&quot;never\&quot; height=\&quot;100%\&quot; width=\&quot;100%\&quot;&gt;&lt;/embed&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/1395238/23565/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+    &quot;total_views&quot;: 82,
+    &quot;recommends&quot;: 4,
+    &quot;created_at&quot;: &quot;2008-07-15T17:44:01-07:00&quot;,
+    &quot;title&quot;: &quot;Boys Noize @ Electromind 2007&quot;,
+    &quot;video_host&quot;: {
+      &quot;url&quot;: null,
+      &quot;domain&quot;: null,
+      &quot;description&quot;: &quot;Video report du Festival Electromind 2007 a Montpellier.21 juillet 2007 \nBOYS NOIZE Live... terriblement efficace... \nExtraits de ce qui passait sur l&#39;�an de 8 x 6m sur le cot�e la grande scene- captations   visuels   \nThe audiovisual Boys noize set @ Electromind - Live feed cameras mixed with visuals - exactly what was on the giant screen nearby the big stage... \nun travail d&#39;�ipe avec 4 vjs : BLINDOFF, TXAMPA et XRAY Concept qui a permit au public vraiment nombreux de voir un peu ce qui se passait tout en b�ficiant d&#39;animations visuelles. \nLa deco: ABRAKADABRA \nLiens : \nhttp://www.electromind.fr \nhttp://www.boysnoize.com/ \nhttp://www.myspace.com/boysnoizerecords \nhttp://www.myspace.com/boysnoizemusic \nhttp://www.vjxray.com \nhttp://www.myspace.com/blindoff \nhttp://www.txampa.com/ \nXray Concept is powered by Vixid &amp; M-Audio \nhttp://www.vixid.com   \nhttp://www.m-audio.fr&quot;
+    },
+    &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.videos.thumbnail/381539.medium100.jpg&quot;,
+    &quot;url&quot;: &quot;http://vodpod.com/watch/381539-boys-noize-electromind-2007?u=spencer&amp;c=electro&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;name&quot;: &quot;boys noize&quot;,
+        &quot;key&quot;: &quot;boys noize&quot;
+      },
+      {
+        &quot;name&quot;: &quot;techno&quot;,
+        &quot;key&quot;: &quot;techno&quot;
+      },
+      {
+        &quot;name&quot;: &quot;electro&quot;,
+        &quot;key&quot;: &quot;electro&quot;
+      }
+    ],
+    &quot;media_240_mobile&quot;: null,
+    &quot;media&quot;: null,
+    &quot;media_480_web&quot;: null,
+    &quot;embed&quot;: &quot;&lt;embed wmode=\&quot;transparent\&quot; allowfullscreen=\&quot;false\&quot; type=\&quot;application/x-shockwave-flash\&quot; src=\&quot;http://www.dailymotion.com/swf/2liZ0bAuB6RHiiT1E\&quot; allowscriptaccess=\&quot;never\&quot; height=\&quot;100%\&quot; width=\&quot;100%\&quot;&gt;&lt;/embed&gt;&lt;img src=\&quot;http://stats.vodpod.com/stats/external_view/1395238/23565/0/pod.gif\&quot; width=\&quot;1\&quot; height=\&quot;1\&quot; style=\&quot;margin:0 -1px -1px 0;border:none;padding:0;display:inline;\&quot; /&gt;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;key&quot;: 381539
+  }
+]</pre></code></td></tr></table></div></div></body></html>

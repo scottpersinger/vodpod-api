@@ -1,0 +1,185 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  background-image: url('/v2/doc/images/background.png');
+  background-repeat: repeat-x;
+  font-size: 10pt;
+  font-family: sans-serif;
+  color: white;
+}
+
+h1 {
+  margin: 0 0 12pt 0;
+  font-size: 200%;
+}
+
+h1.huge {
+  font-size: 80pt;
+  text-align: right;
+  margin: 0;/
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 160%;
+}
+
+h3 {
+  font-size: 140%;
+  margin-bottom: 4pt;
+}  
+
+h4 {
+  font-size: 120%;
+}
+
+a[href] {
+  color: #E96018;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+a[href]:hover {
+  text-decoration: underline;
+}
+
+p {
+  clear: both;
+  padding: 0;
+  margin: 1em 0;
+}
+
+p:first-child {
+  margin: 0;
+}
+
+em {
+  color: #63BFF9;
+  font-style: normal;
+}
+
+.clear {
+  clear: both;
+}
+
+#sheet {
+  width: 600pt;
+  margin: 30pt auto;
+  position: relative;
+}
+
+#tagline {
+  text-align: right;
+  font-size: 160%;
+  font-weight: bolder;
+  margin-bottom: 20pt;
+}
+
+#intro {
+  width: 390pt;
+}
+
+#twitter {
+  position: absolute;
+  left: 400pt;
+  width: 200pt;
+} 
+
+#index {
+  position: relative;
+}
+#guide, #objects, #paths, #legal, #support {
+  position: absolute;
+}
+#guide {
+  top: 0;
+  left: 200pt;
+  width: 200pt;
+}
+
+#objects {
+  top: 0;
+  left: 0pt;
+  width: 200pt;
+}
+
+#legal {
+  top: 100pt;
+  left: 400pt;
+  width: 200pt;
+}
+
+#support {
+  top: 0;
+  left: 400pt;
+  width: 200pt;
+}
+
+#paths {
+  top: 200pt; 
+}
+
+ul {
+  list-style-type: square;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  padding-left: 0;
+}
+li {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.params dl, .attributes dl {
+  margin-left: 14pt;
+}
+
+.params dl > dt, .attributes dl > dt {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+code {
+  color: #4f4;
+}
+
+code a {
+  color: #FF7F3B;
+}
+
+table.response {
+  margin: 0;
+  padding: 0;
+  margin-top: 6pt;
+  width: 600pt;
+}
+
+table.response td {
+  vertical-align: top;
+  padding: 0;
+}
+
+table.response td {
+  width: 50%;
+}
+
+table.response code, .example code, code.block {
+  padding: 4pt;
+/*  white-space: pre-wrap; */
+  display: block;
+  background-color: #333;
+  color: #fff;
+  font-size: 80%;
+}
+
+th {
+  text-align: left;
+}
+
+.index-link {
+  float: right;
+  padding-top: 4pt;
+  font-size: 80%;
+}

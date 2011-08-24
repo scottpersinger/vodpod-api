@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/collection_comments/new</h1><div class="description"><p>With an HTTP POST, creates a <a href="/v2/doc/objects/CollectionVideoComment.html">CollectionVideoComment</a> on the video in question. This comment is bound to your collection and does not appear on vodpod.com. It will appear on vodspots, and can be retrieved with &lt;video&gt;/collection_comments. If you are creating a third-party site which needs to store comments on videos, this is for you.
+If you don&#39;t specify a user, your user ID will be used.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>auth_key</dt><dd>Auth key.</dd><dt>text</dt><dd>The text of the comment (required).</dd><dt>user[email]</dt><dd>The comment author&#39;s email.</dd><dt>user[name]</dt><dd>The comment author&#39;s name.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/users/aphyr/collections/aphyr/videos/2901977/collection_comments/new?auth_key=xxx&amp;text=An+awesome+video&amp;user[email]=aphyr@aphyr.com&amp;user[name]=Aphyr</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;collection_comment&gt;
+  &lt;text&gt;An awesome video&lt;/text&gt;
+  &lt;key&gt;1234&lt;/key&gt;
+  &lt;approved&gt;true&lt;/approved&gt;
+  &lt;user&gt;
+    &lt;name&gt;Aphyr&lt;/name&gt;
+    &lt;url&gt;&lt;/url&gt;
+    &lt;key&gt;guest&lt;/key&gt;
+    &lt;created_at&gt;2010-03-02T11:07:54-08:00&lt;/created_at&gt;
+    &lt;thumbnail&gt;http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;amp;size=60&amp;amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif&lt;/thumbnail&gt;
+  &lt;/user&gt;
+&lt;/collection_comment&gt;</pre></code></td><td class="json"><code><pre>{&quot;created_at&quot;=&gt;&quot;2010-03-02T11:07:54-08:00&quot;,
+ &quot;text&quot;=&gt;&quot;An awesome video&quot;,
+ &quot;key&quot;=&gt;1234,
+ &quot;approved&quot;=&gt;true,
+   &quot;user&quot;=&gt;
+  {&quot;name&quot;=&gt;&quot;Aphyr&quot;,
+   &quot;created_at&quot;=&gt;&quot;2010-03-02T11:07:54-08:00&quot;,
+   &quot;thumbnail&quot;=&gt;
+    &quot;http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;size=60&amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif&quot;,
+   &quot;url&quot;=&gt;nil,
+   &quot;key&quot;=&gt;&quot;guest&quot;}}</pre></code></td></tr></table></div></div></body></html>

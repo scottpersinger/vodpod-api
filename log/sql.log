@@ -1,0 +1,283 @@
+I, [2011-08-22T14:25:48.181023 #25430]  INFO -- : (0.036070s) SELECT * FROM `users` WHERE `id` = 1
+I, [2011-08-22T14:31:39.563058 #25498]  INFO -- : (0.053125s) SELECT * FROM `users` WHERE (`api_key` = '5c87948ac1979401') LIMIT 1
+I, [2011-08-22T14:31:39.677853 #25498]  INFO -- : (0.033789s) SELECT * FROM `tags` WHERE (`name` = 'funny')
+I, [2011-08-22T14:31:39.779732 #25498]  INFO -- : (0.098980s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:39.918370 #25498]  INFO -- : (0.134235s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:39.965199 #25498]  INFO -- : (0.039957s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:40.008343 #25498]  INFO -- : (0.040204s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:40.052067 #25498]  INFO -- : (0.041983s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:40.103321 #25498]  INFO -- : (0.049841s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:40.144282 #25498]  INFO -- : (0.037826s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:40.181832 #25498]  INFO -- : (0.036491s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:40.222801 #25498]  INFO -- : (0.036585s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:40.261077 #25498]  INFO -- : (0.036866s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:40.300729 #25498]  INFO -- : (0.037907s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:40.341868 #25498]  INFO -- : (0.039738s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:40.386949 #25498]  INFO -- : (0.042671s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:40.424670 #25498]  INFO -- : (0.036931s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:40.466776 #25498]  INFO -- : (0.040555s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:40.511314 #25498]  INFO -- : (0.042926s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:40.581160 #25498]  INFO -- : (0.068416s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:40.687034 #25498]  INFO -- : (0.104451s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:40.741661 #25498]  INFO -- : (0.051890s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:40.781755 #25498]  INFO -- : (0.039067s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:40.837296 #25498]  INFO -- : (0.053671s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:40.877259 #25498]  INFO -- : (0.038437s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:40.919230 #25498]  INFO -- : (0.039910s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:40.956533 #25498]  INFO -- : (0.034198s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:40.992662 #25498]  INFO -- : (0.033728s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:41.035365 #25498]  INFO -- : (0.041723s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:41.078176 #25498]  INFO -- : (0.040700s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:41.122078 #25498]  INFO -- : (0.041774s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:41.161730 #25498]  INFO -- : (0.037742s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:41.235646 #25498]  INFO -- : (0.072359s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:41.271878 #25498]  INFO -- : (0.033797s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:41.310599 #25498]  INFO -- : (0.037714s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:41.352068 #25498]  INFO -- : (0.039412s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:41.475845 #25498]  INFO -- : (0.121725s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:41.517124 #25498]  INFO -- : (0.039354s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:41.556095 #25498]  INFO -- : (0.037528s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:41.593602 #25498]  INFO -- : (0.035000s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794920) LIMIT 1
+I, [2011-08-22T14:31:41.632189 #25498]  INFO -- : (0.037818s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794920) LIMIT 1
+I, [2011-08-22T14:31:41.670928 #25498]  INFO -- : (0.035813s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:41.712172 #25498]  INFO -- : (0.039133s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:41.753550 #25498]  INFO -- : (0.038962s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:41.795380 #25498]  INFO -- : (0.040297s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:41.836740 #25498]  INFO -- : (0.039340s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794884) LIMIT 1
+I, [2011-08-22T14:31:41.879285 #25498]  INFO -- : (0.041700s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794884) LIMIT 1
+I, [2011-08-22T14:31:41.919928 #25498]  INFO -- : (0.037680s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:41.971044 #25498]  INFO -- : (0.050278s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:42.013519 #25498]  INFO -- : (0.041156s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:42.052244 #25498]  INFO -- : (0.037623s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:42.097155 #25498]  INFO -- : (0.043345s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:42.137321 #25498]  INFO -- : (0.039265s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:42.175496 #25498]  INFO -- : (0.036871s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:42.219065 #25498]  INFO -- : (0.042412s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:42.273233 #25498]  INFO -- : (0.052091s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) LIMIT 1
+I, [2011-08-22T14:31:42.313645 #25498]  INFO -- : (0.039704s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794811) LIMIT 1
+I, [2011-08-22T14:31:42.353668 #25498]  INFO -- : (0.038758s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:42.398661 #25498]  INFO -- : (0.043605s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:42.438099 #25498]  INFO -- : (0.037967s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:42.498285 #25498]  INFO -- : (0.058959s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:42.533412 #25498]  INFO -- : (0.033070s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794648) LIMIT 1
+I, [2011-08-22T14:31:42.580928 #25498]  INFO -- : (0.046578s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794648) LIMIT 1
+I, [2011-08-22T14:31:42.621592 #25498]  INFO -- : (0.038796s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382084) LIMIT 1
+I, [2011-08-22T14:31:42.663680 #25498]  INFO -- : (0.040642s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382084) LIMIT 1
+I, [2011-08-22T14:31:42.703853 #25498]  INFO -- : (0.038637s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382084) LIMIT 1
+I, [2011-08-22T14:31:42.745450 #25498]  INFO -- : (0.040353s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382084) LIMIT 1
+I, [2011-08-22T14:31:42.794062 #25498]  INFO -- : (0.046491s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794417) LIMIT 1
+I, [2011-08-22T14:31:42.840774 #25498]  INFO -- : (0.045990s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794417) LIMIT 1
+I, [2011-08-22T14:31:42.997866 #25498]  INFO -- : (0.034108s) SELECT * FROM `tags` WHERE (`name` = 'funny')
+I, [2011-08-22T14:31:43.092769 #25498]  INFO -- : (0.092637s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:43.160974 #25498]  INFO -- : (0.064406s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:43.227844 #25498]  INFO -- : (0.039444s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:43.268955 #25498]  INFO -- : (0.039248s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:43.313529 #25498]  INFO -- : (0.042720s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:43.358137 #25498]  INFO -- : (0.043164s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:43.427007 #25498]  INFO -- : (0.063385s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:43.466219 #25498]  INFO -- : (0.038407s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:43.513667 #25498]  INFO -- : (0.044236s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:43.570710 #25498]  INFO -- : (0.054744s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:43.609529 #25498]  INFO -- : (0.037056s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:43.648564 #25498]  INFO -- : (0.037515s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:43.681751 #25498]  INFO -- : (0.030800s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:43.718860 #25498]  INFO -- : (0.036332s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:43.835942 #25498]  INFO -- : (0.114853s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:43.875410 #25498]  INFO -- : (0.037112s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:44.110105 #25498]  INFO -- : (0.233075s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:44.180501 #25498]  INFO -- : (0.068886s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:44.274212 #25498]  INFO -- : (0.090529s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:44.314293 #25498]  INFO -- : (0.038983s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:44.370873 #25498]  INFO -- : (0.055137s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:44.525752 #25498]  INFO -- : (0.153542s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:44.578139 #25498]  INFO -- : (0.050827s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:44.660289 #25498]  INFO -- : (0.080800s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:44.707379 #25498]  INFO -- : (0.043990s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:44.744104 #25498]  INFO -- : (0.035743s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:44.786322 #25498]  INFO -- : (0.040139s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:44.850958 #25498]  INFO -- : (0.062992s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:44.891256 #25498]  INFO -- : (0.037710s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:45.035437 #25498]  INFO -- : (0.142306s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:45.076336 #25498]  INFO -- : (0.038544s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:45.114422 #25498]  INFO -- : (0.037376s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:45.226035 #25498]  INFO -- : (0.109890s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:45.265349 #25498]  INFO -- : (0.037966s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:45.306081 #25498]  INFO -- : (0.038809s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:45.345500 #25498]  INFO -- : (0.037914s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1
+I, [2011-08-22T14:31:45.391025 #25498]  INFO -- : (0.043171s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794920) LIMIT 1
+I, [2011-08-22T14:31:45.429298 #25498]  INFO -- : (0.037372s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794920) LIMIT 1
+I, [2011-08-22T14:31:45.499874 #25498]  INFO -- : (0.068793s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:45.625858 #25498]  INFO -- : (0.124572s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:45.667361 #25498]  INFO -- : (0.039913s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:45.705930 #25498]  INFO -- : (0.037016s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382833) LIMIT 1
+I, [2011-08-22T14:31:46.038561 #25498]  INFO -- : (0.330351s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794884) LIMIT 1
+I, [2011-08-22T14:31:46.343753 #25498]  INFO -- : (0.304340s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794884) LIMIT 1
+I, [2011-08-22T14:31:46.380407 #25498]  INFO -- : (0.033984s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:46.436715 #25498]  INFO -- : (0.054743s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:46.476705 #25498]  INFO -- : (0.038623s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:46.516629 #25498]  INFO -- : (0.038955s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:46.555395 #25498]  INFO -- : (0.036949s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:46.591801 #25498]  INFO -- : (0.035213s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:46.630343 #25498]  INFO -- : (0.037114s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` IS NULL) LIMIT 1
+I, [2011-08-22T14:31:46.671752 #25498]  INFO -- : (0.040178s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) ORDER BY `id` LIMIT 1
+I, [2011-08-22T14:31:46.726710 #25498]  INFO -- : (0.051656s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4794811) LIMIT 1
+I, [2011-08-22T14:31:46.768152 #25498]  INFO -- : (0.040526s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4794811) LIMIT 1
+I, [2011-08-22T14:31:46.807323 #25498]  INFO -- : (0.037755s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:46.847556 #25498]  INFO -- : (0.038655s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:46.888079 #25498]  INFO -- : (0.035981s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:46.990556 #25498]  INFO -- : (0.099912s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382496) LIMIT 1
+I, [2011-08-22T14:31:47.388705 #25498]  INFO -- : (0.032266s) SELECT * FROM `tags` WHERE (`name` = 'fhsf98r2u3777f00DSFHDljjdjs')
+I, [2011-08-22T14:31:47.430851 #25498]  INFO -- : (0.040773s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE 0 ORDER BY `videos`.`id` LIMIT 10
+I, [2011-08-22T14:31:47.468798 #25498]  INFO -- : (0.037329s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE 0 ORDER BY `videos`.`id` LIMIT 10
+I, [2011-08-22T14:31:47.576465 #25498]  INFO -- : (0.037909s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE (`videos`.`id` = '1342323') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:47.616838 #25498]  INFO -- : (0.036057s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:47.656836 #25498]  INFO -- : (0.036962s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:47.696066 #25498]  INFO -- : (0.036503s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:47.736525 #25498]  INFO -- : (0.038586s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:47.777121 #25498]  INFO -- : (0.035796s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 1342323) LIMIT 1
+I, [2011-08-22T14:31:47.814448 #25498]  INFO -- : (0.035894s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 1342323) LIMIT 1
+I, [2011-08-22T14:31:47.871111 #25498]  INFO -- : (0.036313s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`id` FROM `videos` WHERE (`videos`.`id` = '1548742') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:47.911820 #25498]  INFO -- : (0.037620s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2406906) LIMIT 1
+I, [2011-08-22T14:31:47.965899 #25498]  INFO -- : (0.052689s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2406906) LIMIT 1
+I, [2011-08-22T14:31:48.090516 #25498]  INFO -- : (0.121182s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2406906) LIMIT 1
+I, [2011-08-22T14:31:48.151507 #25498]  INFO -- : (0.058507s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2406906) LIMIT 1
+I, [2011-08-22T14:31:48.208519 #25498]  INFO -- : (0.053440s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 1548742) LIMIT 1
+I, [2011-08-22T14:31:48.270928 #25498]  INFO -- : (0.061484s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 1548742) LIMIT 1
+I, [2011-08-22T14:31:49.145511 #25498]  INFO -- : (0.872224s) SELECT * FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 1548742) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 1548742) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` ORDER BY `created_at` DESC LIMIT 12
+I, [2011-08-22T14:31:49.185418 #25498]  INFO -- : (0.035875s) SELECT * FROM `guest_users` WHERE (`id` = 2412868) LIMIT 1
+I, [2011-08-22T14:31:49.240654 #25498]  INFO -- : (0.054264s) SELECT * FROM `guest_users` WHERE (`id` = 2412324) LIMIT 1
+I, [2011-08-22T14:31:49.279909 #25498]  INFO -- : (0.038428s) SELECT * FROM `guest_users` WHERE (`id` = 2412189) LIMIT 1
+I, [2011-08-22T14:31:49.319617 #25498]  INFO -- : (0.038985s) SELECT * FROM `guest_users` WHERE (`id` = 2411887) LIMIT 1
+I, [2011-08-22T14:31:49.355234 #25498]  INFO -- : (0.034926s) SELECT * FROM `guest_users` WHERE (`id` = 2411671) LIMIT 1
+I, [2011-08-22T14:31:49.403032 #25498]  INFO -- : (0.046664s) SELECT * FROM `users` WHERE (`users`.`id` = 982251) LIMIT 1
+I, [2011-08-22T14:31:49.439922 #25498]  INFO -- : (0.035593s) SELECT * FROM `guest_users` WHERE (`id` = 2409116) LIMIT 1
+I, [2011-08-22T14:31:49.480295 #25498]  INFO -- : (0.039458s) SELECT * FROM `guest_users` WHERE (`id` = 2407027) LIMIT 1
+I, [2011-08-22T14:31:49.540579 #25498]  INFO -- : (0.059022s) SELECT * FROM `guest_users` WHERE (`id` = 2399389) LIMIT 1
+I, [2011-08-22T14:31:49.580689 #25498]  INFO -- : (0.038992s) SELECT * FROM `guest_users` WHERE (`id` = 2398031) LIMIT 1
+I, [2011-08-22T14:31:49.619240 #25498]  INFO -- : (0.037833s) SELECT * FROM `guest_users` WHERE (`id` = 2397245) LIMIT 1
+I, [2011-08-22T14:31:49.658226 #25498]  INFO -- : (0.038110s) SELECT * FROM `guest_users` WHERE (`id` = 2396563) LIMIT 1
+I, [2011-08-22T14:31:49.739967 #25498]  INFO -- : (0.053216s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`id` FROM `videos` WHERE (`videos`.`id` = '19517') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:49.776045 #25498]  INFO -- : (0.033294s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 20521) LIMIT 1
+I, [2011-08-22T14:31:49.815413 #25498]  INFO -- : (0.037970s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 20521) LIMIT 1
+I, [2011-08-22T14:31:49.855025 #25498]  INFO -- : (0.037513s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 20521) LIMIT 1
+I, [2011-08-22T14:31:49.892513 #25498]  INFO -- : (0.035981s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 20521) LIMIT 1
+I, [2011-08-22T14:31:49.926829 #25498]  INFO -- : (0.031577s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 19517) LIMIT 1
+I, [2011-08-22T14:31:49.965625 #25498]  INFO -- : (0.037866s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 19517) LIMIT 1
+I, [2011-08-22T14:31:50.080325 #25498]  INFO -- : (0.112467s) SELECT * FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 19517) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 19517) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` ORDER BY `created_at` DESC LIMIT 12
+I, [2011-08-22T14:31:50.121806 #25498]  INFO -- : (0.038223s) SELECT * FROM `users` WHERE (`users`.`id` = 994231) LIMIT 1
+I, [2011-08-22T14:31:50.162408 #25498]  INFO -- : (0.038241s) SELECT * FROM `users` WHERE (`users`.`id` = 11221) LIMIT 1
+I, [2011-08-22T14:31:50.236243 #25498]  INFO -- : (0.071752s) SELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1
+I, [2011-08-22T14:31:50.276083 #25498]  INFO -- : (0.038188s) SELECT * FROM `users` WHERE (`users`.`id` = 742445) LIMIT 1
+I, [2011-08-22T14:31:50.314750 #25498]  INFO -- : (0.036519s) SELECT * FROM `guest_users` WHERE (`id` = 663358) LIMIT 1
+I, [2011-08-22T14:31:50.359068 #25498]  INFO -- : (0.043033s) SELECT * FROM `users` WHERE (`users`.`id` = 474640) LIMIT 1
+I, [2011-08-22T14:31:50.397223 #25498]  INFO -- : (0.036517s) SELECT * FROM `users` WHERE (`users`.`id` = 375848) LIMIT 1
+I, [2011-08-22T14:31:50.512730 #25498]  INFO -- : (0.113684s) SELECT * FROM `users` WHERE (`users`.`id` = 372104) LIMIT 1
+I, [2011-08-22T14:31:50.552318 #25498]  INFO -- : (0.037913s) SELECT * FROM `users` WHERE (`users`.`id` = 71807) LIMIT 1
+I, [2011-08-22T14:31:50.593527 #25498]  INFO -- : (0.039632s) SELECT * FROM `users` WHERE (`users`.`id` = 43853) LIMIT 1
+I, [2011-08-22T14:31:50.632599 #25498]  INFO -- : (0.037487s) SELECT * FROM `users` WHERE (`users`.`id` = 55786) LIMIT 1
+I, [2011-08-22T14:31:50.674767 #25498]  INFO -- : (0.040404s) SELECT * FROM `users` WHERE (`users`.`id` = 52992) LIMIT 1
+I, [2011-08-22T14:31:50.738992 #25498]  INFO -- : (0.033505s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE (`videos`.`id` = 'electro') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:50.798815 #25498]  INFO -- : (0.057833s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE (`videos`.`id` = 'electro') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:50.901199 #25498]  INFO -- : (0.085078s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`id` FROM `videos` WHERE (`videos`.`id` = '1342733') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:50.941521 #25498]  INFO -- : (0.036998s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2062287) LIMIT 1
+I, [2011-08-22T14:31:50.981979 #25498]  INFO -- : (0.038951s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2062287) LIMIT 1
+I, [2011-08-22T14:31:51.021448 #25498]  INFO -- : (0.037527s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2062287) LIMIT 1
+I, [2011-08-22T14:31:51.071274 #25498]  INFO -- : (0.048615s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2062287) LIMIT 1
+I, [2011-08-22T14:31:51.114022 #25498]  INFO -- : (0.038873s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 1342733) LIMIT 1
+I, [2011-08-22T14:31:51.166040 #25498]  INFO -- : (0.050937s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 1342733) LIMIT 1
+I, [2011-08-22T14:31:51.213181 #25498]  INFO -- : (0.045223s) SELECT `tags`.* FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 1342733)) LIMIT 12
+I, [2011-08-22T14:31:51.273078 #25498]  INFO -- : (0.058416s) SELECT `users`.* FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 1342733)) LIMIT 12
+I, [2011-08-22T14:31:51.327474 #25498]  INFO -- : (0.034217s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`groupvideos_count` FROM `videos` WHERE (`videos`.`id` = '1342323') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:51.366068 #25498]  INFO -- : (0.035210s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:51.407783 #25498]  INFO -- : (0.040009s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:51.452262 #25498]  INFO -- : (0.042771s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:51.494943 #25498]  INFO -- : (0.041236s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2061550) LIMIT 1
+I, [2011-08-22T14:31:51.599985 #25498]  INFO -- : (0.102407s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 1342323) LIMIT 1
+I, [2011-08-22T14:31:51.657702 #25498]  INFO -- : (0.056935s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 1342323) LIMIT 1
+I, [2011-08-22T14:31:51.692250 #25498]  INFO -- : (0.032605s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 1342323)) LIMIT 1
+I, [2011-08-22T14:31:51.750799 #25498]  INFO -- : (0.033691s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media` FROM `videos` WHERE (`videos`.`id` = '1445599') ORDER BY `videos`.`id` LIMIT 1
+I, [2011-08-22T14:31:51.807905 #25498]  INFO -- : (0.053944s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2239927) LIMIT 1
+I, [2011-08-22T14:31:51.845665 #25498]  INFO -- : (0.035693s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2239927) LIMIT 1
+I, [2011-08-22T14:31:51.885814 #25498]  INFO -- : (0.037942s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2239927) LIMIT 1
+I, [2011-08-22T14:31:51.925379 #25498]  INFO -- : (0.038113s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 2239927) LIMIT 1
+I, [2011-08-22T14:31:52.037183 #25498]  INFO -- : (0.034170s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 1445599) LIMIT 1
+I, [2011-08-22T14:31:52.074347 #25498]  INFO -- : (0.036286s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 1445599) LIMIT 1
+I, [2011-08-22T14:31:52.133744 #25498]  INFO -- : (0.039715s) SELECT * FROM `tags` WHERE (`name` = 'funny')
+I, [2011-08-22T14:31:52.203828 #25498]  INFO -- : (0.064391s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`groupvideos_count`, `videos`.`total_external_views`, `videos`.`updated_at`, `videos`.`weekly_views`, `videos`.`id` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:52.258008 #25498]  INFO -- : (0.043095s) SELECT `groups`.*, `groupvideos`.`video_id` AS `x_foreign_key_x` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:52.318391 #25498]  INFO -- : (0.054884s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417))
+I, [2011-08-22T14:31:52.524855 #25498]  INFO -- : (0.199283s) SELECT * FROM `group_audits` WHERE (`group_audits`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)) ORDER BY `created_at` DESC
+I, [2011-08-22T14:31:52.579050 #25498]  INFO -- : (0.051009s) SELECT `tags`.*, `video_taggings`.`record_id` AS `x_foreign_key_x` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:52.657899 #25498]  INFO -- : (0.076417s) SELECT `users`.*, `groupvideos`.`video_id` AS `x_foreign_key_x` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:52.716845 #25498]  INFO -- : (0.053229s) SELECT `videos`.`created_at`, `videos`.`comment`, `videos`.`embed_tag`, `videos`.`primary_groupvideo_id`, `videos`.`id`, `videos`.`flv_media`, `videos`.`up_votes_count`, `videos`.`thumbnail`, `videos`.`title`, `videos`.`total_views`, `videos`.`orig_title`, `videos`.`description`, `videos`.`media`, `videos`.`groupvideos_count`, `videos`.`total_external_views`, `videos`.`updated_at`, `videos`.`weekly_views`, `videos`.`id` FROM `videos` INNER JOIN `video_taggings` ON ((`video_taggings`.`record_id` = `videos`.`id`) AND (`video_taggings`.`tag_id` = 202)) ORDER BY `video_taggings`.`record_created_at` DESC LIMIT 10
+I, [2011-08-22T14:31:52.771624 #25498]  INFO -- : (0.050812s) SELECT `groups`.*, `groupvideos`.`video_id` AS `x_foreign_key_x` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:52.847671 #25498]  INFO -- : (0.071948s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417))
+I, [2011-08-22T14:31:52.907542 #25498]  INFO -- : (0.055883s) SELECT * FROM `group_audits` WHERE (`group_audits`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)) ORDER BY `created_at` DESC
+I, [2011-08-22T14:31:52.953164 #25498]  INFO -- : (0.043071s) SELECT `tags`.*, `video_taggings`.`record_id` AS `x_foreign_key_x` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:53.006706 #25498]  INFO -- : (0.051711s) SELECT `users`.*, `groupvideos`.`video_id` AS `x_foreign_key_x` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` IN (4795470, 4795308, 4795173, 4795104, 4795075, 4794920, 4794884, 4794811, 4794648, 4794417)))
+I, [2011-08-22T14:31:53.052421 #25498]  INFO -- : (0.039333s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:53.106070 #25498]  INFO -- : (0.052264s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:53.187985 #25498]  INFO -- : (0.080425s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:53.236354 #25498]  INFO -- : (0.047126s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383779) LIMIT 1
+I, [2011-08-22T14:31:53.343613 #25498]  INFO -- : (0.104983s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:53.389703 #25498]  INFO -- : (0.045179s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795470) LIMIT 1
+I, [2011-08-22T14:31:53.423333 #25498]  INFO -- : (0.032093s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 4795470)) LIMIT 1
+I, [2011-08-22T14:31:53.468223 #25498]  INFO -- : (0.042691s) SELECT * FROM `users` WHERE (`users`.`id` = 958792) LIMIT 1
+I, [2011-08-22T14:31:53.559917 #25498]  INFO -- : (0.089797s) SELECT * FROM `groups` WHERE (`groups`.`id` = 998068) LIMIT 1
+I, [2011-08-22T14:31:53.598794 #25498]  INFO -- : (0.035957s) SELECT COUNT(*) AS `count` FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 4795470) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 4795470) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` LIMIT 1
+I, [2011-08-22T14:31:53.657100 #25498]  INFO -- : (0.057483s) SELECT * FROM `users` WHERE (`users`.`id` = 958792) LIMIT 1
+I, [2011-08-22T14:31:53.692507 #25498]  INFO -- : (0.032571s) SELECT COUNT(*) AS `count` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 4795470)) LIMIT 1
+I, [2011-08-22T14:31:53.731781 #25498]  INFO -- : (0.037948s) SELECT COUNT(*) AS `count` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 4795470)) LIMIT 1
+I, [2011-08-22T14:31:53.777692 #25498]  INFO -- : (0.044132s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:53.821660 #25498]  INFO -- : (0.042498s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:53.861467 #25498]  INFO -- : (0.038074s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:53.907073 #25498]  INFO -- : (0.044138s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383528) LIMIT 1
+I, [2011-08-22T14:31:54.002979 #25498]  INFO -- : (0.093927s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:54.038667 #25498]  INFO -- : (0.034976s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795308) LIMIT 1
+I, [2011-08-22T14:31:54.081923 #25498]  INFO -- : (0.041740s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 4795308)) LIMIT 1
+I, [2011-08-22T14:31:54.122028 #25498]  INFO -- : (0.038488s) SELECT * FROM `users` WHERE (`users`.`id` = 875855) LIMIT 1
+I, [2011-08-22T14:31:54.161841 #25498]  INFO -- : (0.038031s) SELECT * FROM `groups` WHERE (`groups`.`id` = 911891) LIMIT 1
+I, [2011-08-22T14:31:54.203186 #25498]  INFO -- : (0.039036s) SELECT COUNT(*) AS `count` FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 4795308) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 4795308) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` LIMIT 1
+I, [2011-08-22T14:31:54.241650 #25498]  INFO -- : (0.037668s) SELECT * FROM `users` WHERE (`users`.`id` = 875855) LIMIT 1
+I, [2011-08-22T14:31:54.282230 #25498]  INFO -- : (0.038252s) SELECT COUNT(*) AS `count` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 4795308)) LIMIT 1
+I, [2011-08-22T14:31:54.317509 #25498]  INFO -- : (0.033710s) SELECT COUNT(*) AS `count` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 4795308)) LIMIT 1
+I, [2011-08-22T14:31:54.355667 #25498]  INFO -- : (0.037021s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:54.397086 #25498]  INFO -- : (0.039952s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:54.463564 #25498]  INFO -- : (0.064572s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:54.511506 #25498]  INFO -- : (0.046441s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383309) LIMIT 1
+I, [2011-08-22T14:31:54.546558 #25498]  INFO -- : (0.033066s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:54.594624 #25498]  INFO -- : (0.047329s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795173) LIMIT 1
+I, [2011-08-22T14:31:54.632422 #25498]  INFO -- : (0.036221s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 4795173)) LIMIT 1
+I, [2011-08-22T14:31:54.672379 #25498]  INFO -- : (0.038549s) SELECT * FROM `users` WHERE (`users`.`id` = 791209) LIMIT 1
+I, [2011-08-22T14:31:54.710558 #25498]  INFO -- : (0.036331s) SELECT * FROM `groups` WHERE (`groups`.`id` = 824999) LIMIT 1
+I, [2011-08-22T14:31:54.758225 #25498]  INFO -- : (0.045526s) SELECT COUNT(*) AS `count` FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 4795173) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 4795173) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` LIMIT 1
+I, [2011-08-22T14:31:54.796987 #25498]  INFO -- : (0.037761s) SELECT * FROM `users` WHERE (`users`.`id` = 791209) LIMIT 1
+I, [2011-08-22T14:31:54.832158 #25498]  INFO -- : (0.033089s) SELECT COUNT(*) AS `count` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 4795173)) LIMIT 1
+I, [2011-08-22T14:31:54.867981 #25498]  INFO -- : (0.034538s) SELECT COUNT(*) AS `count` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 4795173)) LIMIT 1
+I, [2011-08-22T14:31:54.907100 #25498]  INFO -- : (0.038139s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:54.953501 #25498]  INFO -- : (0.045075s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:54.991343 #25498]  INFO -- : (0.036337s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:55.034891 #25498]  INFO -- : (0.042074s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383198) LIMIT 1
+I, [2011-08-22T14:31:55.081443 #25498]  INFO -- : (0.044126s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:55.121652 #25498]  INFO -- : (0.039170s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795104) LIMIT 1
+I, [2011-08-22T14:31:55.158244 #25498]  INFO -- : (0.034459s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 4795104)) LIMIT 1
+I, [2011-08-22T14:31:55.210646 #25498]  INFO -- : (0.050650s) SELECT * FROM `users` WHERE (`users`.`id` = 995861) LIMIT 1
+I, [2011-08-22T14:31:55.273313 #25498]  INFO -- : (0.060730s) SELECT * FROM `groups` WHERE (`groups`.`id` = 1037008) LIMIT 1
+I, [2011-08-22T14:31:55.327315 #25498]  INFO -- : (0.051356s) SELECT COUNT(*) AS `count` FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 4795104) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 4795104) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` LIMIT 1
+I, [2011-08-22T14:31:55.370628 #25498]  INFO -- : (0.042317s) SELECT * FROM `users` WHERE (`users`.`id` = 995861) LIMIT 1
+I, [2011-08-22T14:31:55.403972 #25498]  INFO -- : (0.030432s) SELECT COUNT(*) AS `count` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 4795104)) LIMIT 1
+I, [2011-08-22T14:31:55.444518 #25498]  INFO -- : (0.039260s) SELECT COUNT(*) AS `count` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 4795104)) LIMIT 1
+I, [2011-08-22T14:31:55.484118 #25498]  INFO -- : (0.038437s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:55.528382 #25498]  INFO -- : (0.042160s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:55.570989 #25498]  INFO -- : (0.040438s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:55.614540 #25498]  INFO -- : (0.042113s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7383168) LIMIT 1
+I, [2011-08-22T14:31:55.657753 #25498]  INFO -- : (0.040814s) SELECT COUNT(*) AS `count` FROM `groupvideos` WHERE (`groupvideos`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:55.694409 #25498]  INFO -- : (0.035845s) SELECT * FROM `video_host_records` WHERE (`video_host_records`.`video_id` = 4795075) LIMIT 1
+I, [2011-08-22T14:31:55.729419 #25498]  INFO -- : (0.032478s) SELECT COUNT(*) AS `count` FROM `groups` INNER JOIN `groupvideos` ON ((`groupvideos`.`group_id` = `groups`.`id`) AND (`groupvideos`.`video_id` = 4795075)) LIMIT 1
+I, [2011-08-22T14:31:55.771365 #25498]  INFO -- : (0.040207s) SELECT * FROM `users` WHERE (`users`.`id` = 995861) LIMIT 1
+I, [2011-08-22T14:31:55.857103 #25498]  INFO -- : (0.036863s) SELECT * FROM `groups` WHERE (`groups`.`id` = 1037008) LIMIT 1
+I, [2011-08-22T14:31:55.899076 #25498]  INFO -- : (0.040240s) SELECT COUNT(*) AS `count` FROM (SELECT * FROM `group_audits` WHERE ((`video_id` = 4795075) AND (`group_audits`.`action` = 'review_video')) UNION SELECT * FROM `group_audits` WHERE ((`video_id` = 4795075) AND (`group_audits`.`action` = 'add_video') AND (length(`group_audits`.`text`) > 0))) AS `t1` LIMIT 1
+I, [2011-08-22T14:31:55.946306 #25498]  INFO -- : (0.046493s) SELECT * FROM `users` WHERE (`users`.`id` = 995861) LIMIT 1
+I, [2011-08-22T14:31:55.983577 #25498]  INFO -- : (0.035211s) SELECT COUNT(*) AS `count` FROM `tags` INNER JOIN `video_taggings` ON ((`video_taggings`.`tag_id` = `tags`.`id`) AND (`video_taggings`.`record_id` = 4795075)) LIMIT 1
+I, [2011-08-22T14:31:56.031078 #25498]  INFO -- : (0.046219s) SELECT COUNT(*) AS `count` FROM `users` INNER JOIN `groupvideos` ON ((`groupvideos`.`user_id` = `users`.`id`) AND (`groupvideos`.`video_id` = 4795075)) LIMIT 1
+I, [2011-08-22T14:31:56.104478 #25498]  INFO -- : (0.072522s) SELECT * FROM `groupvideos` WHERE (`groupvideos`.`id` = 7382928) LIMIT 1

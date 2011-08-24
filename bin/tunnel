@@ -1,0 +1,4 @@
+#!/bin/sh
+# Search
+ssh -L 8983:solr1:8983 gw.tx.vodpod.com sleep 50000 &
+ssh -L 8082:solr2:8082 gw.tx.vodpod.com sleep 50000 &

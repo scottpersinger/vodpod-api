@@ -1,0 +1,37 @@
+I, [2011-08-22T14:31:39.468886 #25498]  INFO -- : Starting API server on port 8000
+I, [2011-08-22T14:31:39.474639 #25498]  INFO -- : Server finished.
+I, [2011-08-22T14:31:39.481577 #25498]  INFO -- : Starting API server on port 8000
+I, [2011-08-22T14:31:39.482105 #25498]  INFO -- : Server finished.
+I, [2011-08-22T14:31:39.596601 #25498]  INFO -- : REQ aphyr h_videos()
+I, [2011-08-22T14:31:39.601913 #25498]  INFO -- : API Error: forbidden
+127.0.0.1 - - [22/Aug/2011 14:31:39] "GET /videos.json?api_key=5c87948ac1979401 " 403 7444 0.1015
+I, [2011-08-22T14:31:39.639302 #25498]  INFO -- : REQ aphyr h_videos()
+127.0.0.1 - - [22/Aug/2011 14:31:42] "GET /videos.json?api_key=5c87948ac1979401&tags=funny " 200 15375 3.2092
+I, [2011-08-22T14:31:42.959144 #25498]  INFO -- : REQ aphyr h_videos()
+E, [2011-08-22T14:31:46.993142 #25498] ERROR -- : timeout: aphyr h_videos()
+I, [2011-08-22T14:31:46.993936 #25498]  INFO -- : API Error: timed out
+127.0.0.1 - - [22/Aug/2011 14:31:47] "GET /videos.xml?api_key=5c87948ac1979401&tags=funny " 500 87 4.1370
+I, [2011-08-22T14:31:47.049858 #25498]  INFO -- : REQ aphyr h_videos()
+127.0.0.1 - - [22/Aug/2011 14:31:47] "GET /videos.json?api_key=5c87948ac1979401&tags=fhsf98r2u3777f00DSFHDljjdjs " 200 31 0.4313
+I, [2011-08-22T14:31:47.527120 #25498]  INFO -- : REQ aphyr h_videos_*(1342323)
+127.0.0.1 - - [22/Aug/2011 14:31:47] "GET /videos/1342323.json?api_key=5c87948ac1979401 " 200 1347 0.2921
+I, [2011-08-22T14:31:47.827908 #25498]  INFO -- : REQ aphyr h_videos_*(1548742)
+127.0.0.1 - - [22/Aug/2011 14:31:49] "GET /videos/1548742.json?api_key=5c87948ac1979401&include=comments " 200 6080 1.8405
+I, [2011-08-22T14:31:49.681200 #25498]  INFO -- : REQ aphyr h_videos_*(19517)
+127.0.0.1 - - [22/Aug/2011 14:31:50] "GET /videos/19517.json?api_key=5c87948ac1979401&include=comments " 200 3773 1.0069
+I, [2011-08-22T14:31:50.688060 #25498]  INFO -- : REQ aphyr h_videos_*(1342323)
+I, [2011-08-22T14:31:50.690251 #25498]  INFO -- : Cache hit
+127.0.0.1 - - [22/Aug/2011 14:31:50] "GET /videos/1342323.json?api_key=5c87948ac1979401 " 200 1347 0.0067
+I, [2011-08-22T14:31:50.700868 #25498]  INFO -- : REQ aphyr h_videos_*(electro)
+I, [2011-08-22T14:31:50.799605 #25498]  INFO -- : API Error: record missing
+127.0.0.1 - - [22/Aug/2011 14:31:50] "GET /videos/electro.json?api_key=5c87948ac1979401 " 500 7519 0.1048
+I, [2011-08-22T14:31:50.811019 #25498]  INFO -- : REQ aphyr h_videos_*(1342733)
+127.0.0.1 - - [22/Aug/2011 14:31:51] "GET /videos/1342733.json?api_key=5c87948ac1979401&include=key%2Ctags%2Ctitle%2Cusers " 200 3108 0.4734
+I, [2011-08-22T14:31:51.288391 #25498]  INFO -- : REQ aphyr h_videos_*(1342323)
+127.0.0.1 - - [22/Aug/2011 14:31:51] "GET /videos/1342323.json?api_key=5c87948ac1979401&include=collections_count " 200 1369 0.4093
+I, [2011-08-22T14:31:51.712152 #25498]  INFO -- : REQ aphyr h_videos_*(1445599)
+127.0.0.1 - - [22/Aug/2011 14:31:52] "GET /videos/1445599.json?api_key=5c87948ac1979401 " 200 1304 0.3762
+I, [2011-08-22T14:31:52.086728 #25498]  INFO -- : REQ aphyr h_videos()
+E, [2011-08-22T14:31:56.105270 #25498] ERROR -- : timeout: aphyr h_videos()
+I, [2011-08-22T14:31:56.107569 #25498]  INFO -- : API Error: timed out
+127.0.0.1 - - [22/Aug/2011 14:31:56] "GET /videos.json?api_key=5c87948ac1979401&include=all&tags=funny " 500 6803 4.0262

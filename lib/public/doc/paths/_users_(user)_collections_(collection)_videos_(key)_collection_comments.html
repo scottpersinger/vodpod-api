@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/collection_comments</h1><div class="description"><p>A list of the <a href="/v2/doc/objects/Comment.html">Comments</a> associated with a specific video in a collection. This selects comments made <em>only</em> on this collection&#39;s version of the video.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd><dt>limit</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>offset</dt><dd>How far into the result set to begin returning objects. Offset 0 returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...</dd><dt>order</dt><dd>One of <code>asc</code> or <code>desc</code>, for ascending and descending sort orders, respectively.</dd><dt>page</dt><dd>The page of the results to return. If <code>offset</code> is provided, it takes precedence over <code>page</code>.</dd><dt>per_page</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>sort</dt><dd>The name of an attribute to sort by. Only certain columns are sortable; see the object&#39;s documentation for details.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/users/spencer/collections/electro/videos/432984/comments</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;comments total=&quot;4&quot;&gt;
+  &lt;comment&gt;
+    &lt;key&gt;2221374&lt;/key&gt;
+    &lt;text&gt;jesu! thats insane, i wish i&#39;d known&lt;/text&gt;
+    &lt;created_at&gt;2008-10-06T14:27:41-07:00&lt;/created_at&gt;
+    &lt;user&gt;
+      &lt;user&gt;
+        &lt;key&gt;leeskitzodanza&lt;/key&gt;
+        &lt;name&gt;LeeSkitzoDanza&lt;/name&gt;
+        &lt;points&gt;0&lt;/points&gt;
+        &lt;thumbnail/&gt;
+      &lt;/user&gt;
+    &lt;/user&gt;
+  &lt;/comment&gt;
+  &lt;comment&gt;
+    &lt;key&gt;2194843&lt;/key&gt;
+    &lt;text&gt;they played at Treasure Island two weekends ago.  Third time in SF in about a year.&lt;/text&gt;
+    &lt;created_at&gt;2008-09-30T18:05:43-07:00&lt;/created_at&gt;
+    &lt;user&gt;
+      &lt;user&gt;
+        &lt;key&gt;spencer&lt;/key&gt;
+        &lt;name&gt;Spencer&lt;/name&gt;
+        &lt;points&gt;83&lt;/points&gt;
+        &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&lt;/thumbnail&gt;
+      &lt;/user&gt;
+    &lt;/user&gt;
+  &lt;/comment&gt;
+  &lt;comment&gt;
+    &lt;key&gt;2194769&lt;/key&gt;
+    &lt;text&gt;there were in san francisco?????&lt;/text&gt;
+    &lt;created_at&gt;2008-09-30T17:44:58-07:00&lt;/created_at&gt;
+    &lt;user&gt;
+      &lt;user&gt;
+        &lt;key&gt;leeskitzodanza&lt;/key&gt;
+        &lt;name&gt;LeeSkitzoDanza&lt;/name&gt;
+        &lt;points&gt;0&lt;/points&gt;
+        &lt;thumbnail/&gt;
+      &lt;/user&gt;
+    &lt;/user&gt;
+  &lt;/comment&gt;
+  &lt;comment&gt;
+    &lt;key&gt;1760817&lt;/key&gt;
+    &lt;text&gt;Dunno where Rex Club is, but they put together one sick promo video.  Justice is headlining Treasure Island in sept, and is gonna rock the shit out of that place.&lt;/text&gt;
+    &lt;created_at&gt;2008-05-29T14:25:52-07:00&lt;/created_at&gt;
+    &lt;user&gt;
+      &lt;user&gt;
+        &lt;key&gt;spencer&lt;/key&gt;
+        &lt;name&gt;Spencer&lt;/name&gt;
+        &lt;points&gt;83&lt;/points&gt;
+        &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&lt;/thumbnail&gt;
+      &lt;/user&gt;
+    &lt;/user&gt;
+  &lt;/comment&gt;
+&lt;/comments&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;results&quot;: [
+      {
+        &quot;created_at&quot;: &quot;2008-10-06T14:27:41-07:00&quot;,
+        &quot;text&quot;: &quot;jesu! thats insane, i wish i&#39;d known&quot;,
+        &quot;user&quot;: {
+          &quot;name&quot;: &quot;LeeSkitzoDanza&quot;,
+          &quot;thumbnail&quot;: null,
+          &quot;points&quot;: 0,
+          &quot;key&quot;: &quot;leeskitzodanza&quot;
+        },
+        &quot;key&quot;: 2221374
+      },
+      {
+        &quot;created_at&quot;: &quot;2008-09-30T18:05:43-07:00&quot;,
+        &quot;text&quot;: &quot;they played at Treasure Island two weekends ago.  Third time in SF in about a year.&quot;,
+        &quot;user&quot;: {
+          &quot;name&quot;: &quot;Spencer&quot;,
+          &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&quot;,
+          &quot;points&quot;: 83,
+          &quot;key&quot;: &quot;spencer&quot;
+        },
+        &quot;key&quot;: 2194843
+      },
+      {
+        &quot;created_at&quot;: &quot;2008-09-30T17:44:58-07:00&quot;,
+        &quot;text&quot;: &quot;there were in san francisco?????&quot;,
+        &quot;user&quot;: {
+          &quot;name&quot;: &quot;LeeSkitzoDanza&quot;,
+          &quot;thumbnail&quot;: null,
+          &quot;points&quot;: 0,
+          &quot;key&quot;: &quot;leeskitzodanza&quot;
+        },
+        &quot;key&quot;: 2194769
+      },
+      {
+        &quot;created_at&quot;: &quot;2008-05-29T14:25:52-07:00&quot;,
+        &quot;text&quot;: &quot;Dunno where Rex Club is, but they put together one sick promo video.  Justice is headlining Treasure Island in sept, and is gonna rock the shit out of that place.&quot;,
+        &quot;user&quot;: {
+          &quot;name&quot;: &quot;Spencer&quot;,
+          &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&quot;,
+          &quot;points&quot;: 83,
+          &quot;key&quot;: &quot;spencer&quot;
+        },
+        &quot;key&quot;: 1760817
+      }
+    ],
+    &quot;total&quot;: 4
+  }
+]</pre></code></td></tr></table></div></div></body></html>

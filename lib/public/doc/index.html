@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet">
+<h1 class="huge">VODPOD <em>API</em></h1>
+
+<div id="tagline">Show <em>computers</em> your favorite videos</div>
+
+<div id="twitter">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 6000,
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('vodpodapi').start();
+</script>
+</div>
+
+<div id="intro" class="intro">
+<p>The Vodpod API is an HTTP service for interacting with the world of videos on <a href="http://vodpod.com">vodpod.com</a>.</p>
+
+<h2>Get Started</h2>
+
+<ol>
+<li><a href="http://vodpod.com/site/register">Get an account</a> on vodpod.com.</li>
+<li><a href="http://vodpod.com/account/edit/advanced">Find your API key</a> by clicking on "Change settings", then "Advanced".
+<li>Go to <a href="http://api.vodpod.com/v2/me?api_key=xxx">http://api.vodpod.com/v2/me?api_key=xxx</a>, and fill in your API key in the URL.</li>
+</ol>
+
+<code class="block"><pre>[
+  true,
+  {
+    "description": "I collect videos for MI-5.",
+    "key": "jamesbond",
+    "name": "Bond. James Bond.",
+    "thumbnail": "http://s3.amazonaws.com/.../007.medium.jpg",
+    "videos_count": 10
+  }
+]</pre></code>
+
+<p>Hey, that's you! What else can you do? Take a look at our quick <a href="/v2/doc/tutorial.html">tutorial</a>.</p>
+</div>
+
+<div id="index">
+<div id="guide">
+  <h2>Guide</h2>
+  <ul>
+    <li><a href="/v2/doc/guide.html#overview">Overview</a></li>
+    <li><a href="/v2/doc/guide.html#toolkits">Toolkits</a></li>
+    <li><a href="/v2/doc/guide.html#endpoint">Endpoint</a></li>
+    <li><a href="/v2/doc/guide.html#api_keys">API & Auth Keys</a></li>
+    <li><a href="/v2/doc/guide.html#formats">Formats</a></li>
+    <li><a href="/v2/doc/guide.html#errors">Errors</a></li>
+    <li><a href="/v2/doc/guide.html#rate_limits">Rate Limits</a></li>
+    <li><a href="/v2/doc/guide.html#sorting">Sorting</a></li>
+    <li><a href="/v2/doc/guide.html#pagination">Pagination</a></li>
+    <li><a href="/v2/doc/guide.html#dates">Dates</a></li>
+    <li><a href="/v2/doc/guide.html#guidelines">Use Guidelines</a></li>
+  </ul>
+</div>
+
+<div id="legal">
+  <h2>Legal</h2>
+  <ul>
+    <li><a href="/v2/doc/tos.html">Terms of Service</a></li>
+  </ul>
+</div>
+
+<div id="support">
+  <h2>Support</h2>
+  <ul>
+    <li><a href="http://groups.google.com/group/vodpod-api">Google Group</a></li>
+    <li><a href="/v2/doc/tutorial.html">Tutorial</a></li>
+    <li>For commercial use, email <a href="mailto:support@vodpod.com">support@vodpod.com</a></li>
+  </ul>
+</div>  
+<div id="objects"><h2>Objects</h2><ul><li><a href="/v2/doc/objects/Category.html">Category</a></li>
+<li><a href="/v2/doc/objects/Collection.html">Collection</a></li>
+<li><a href="/v2/doc/objects/CollectionVideo.html">CollectionVideo</a></li>
+<li><a href="/v2/doc/objects/CollectionVideoComment.html">CollectionVideoComment</a></li>
+<li><a href="/v2/doc/objects/Comment.html">Comment</a></li>
+<li><a href="/v2/doc/objects/Error.html">Error</a></li>
+<li><a href="/v2/doc/objects/Group.html">Group</a></li>
+<li><a href="/v2/doc/objects/GuestUser.html">GuestUser</a></li>
+<li><a href="/v2/doc/objects/NewsFeedItem.html">NewsFeedItem</a></li>
+<li><a href="/v2/doc/objects/Tag.html">Tag</a></li>
+<li><a href="/v2/doc/objects/User.html">User</a></li>
+<li><a href="/v2/doc/objects/Video.html">Video</a></li>
+</ul></div>
+<div id="paths"><h2>Paths</h2><ul><li><a href="/v2/doc/paths/_categories.html">/categories</a></li>
+<li><a href="/v2/doc/paths/_categories_(category).html">/categories/&lt;category&gt;</a></li>
+<li><a href="/v2/doc/paths/_me.html">/me</a></li>
+<li><a href="/v2/doc/paths/_my.html">/my</a></li>
+<li><a href="/v2/doc/paths/_rate_limits.html">/rate_limits</a></li>
+<li><a href="/v2/doc/paths/_search.html">/search</a></li>
+<li><a href="/v2/doc/paths/_users_(user).html">/users/&lt;user&gt;</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collection.html">/users/&lt;user&gt;/collection</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection).html">/users/&lt;user&gt;/collections/&lt;collection&gt;</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_search.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/search</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_video_(video)_collection_comments_(comment)_delete.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/video/&lt;video&gt;/collection_comments/&lt;comment&gt;/delete</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos_(key).html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos_(key)_collection_comments.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/collection_comments</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos_(key)_collection_comments_new.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/collection_comments/new</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos_(key)_comments.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/comments</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_collections_(collection)_videos_(key)_comments_new.html">/users/&lt;user&gt;/collections/&lt;collection&gt;/videos/&lt;key&gt;/comments/new</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_feed.html">/users/&lt;user&gt;/feed</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_feed_checked.html">/users/&lt;user&gt;/feed_checked</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_followers.html">/users/&lt;user&gt;/followers</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_following.html">/users/&lt;user&gt;/following</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_following_(user).html">/users/&lt;user&gt;/following/&lt;user&gt;</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_following_(user)_delete.html">/users/&lt;user&gt;/following/&lt;user&gt;/delete</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_following_new.html">/users/&lt;user&gt;/following/new</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_videos.html">/users/&lt;user&gt;/videos</a></li>
+<li><a href="/v2/doc/paths/_users_(user)_videos_(id).html">/users/&lt;user&gt;/videos/&lt;id&gt;</a></li>
+<li><a href="/v2/doc/paths/_videos.html">/videos</a></li>
+<li><a href="/v2/doc/paths/_videos_(key).html">/videos/&lt;key&gt;</a></li>
+<li><a href="/v2/doc/paths/_videos_(key)_comments.html">/videos/&lt;key&gt;/comments</a></li>
+<li><a href="/v2/doc/paths/_videos_(key)_comments_new.html">/videos/&lt;key&gt;/comments/new</a></li>
+<li><a href="/v2/doc/paths/_videos_(key)_recommend.html">/videos/&lt;key&gt;/recommend</a></li>
+</ul></div></div>
+</body></html>

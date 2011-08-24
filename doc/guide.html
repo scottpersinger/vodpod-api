@@ -1,0 +1,194 @@
+<div id="sheet">
+
+<div class="overview">
+  <h1><a href="/v2/doc">API</a> Guide</h1>
+
+    <h2><a id="overview">Overview</a></h2>
+
+    <p>This is version 2 of the Vodpod API. It allows you to query and
+      manipulate the <a href="http://vodpod.com">http://vodpod.com</a> service
+      through HTTP.</p>
+
+    <h2><a id="toolkits">Toolkits</a></h2>
+
+    <ul>
+      <li><a href="http://github.com/aphyr/ruby-vodpod">Ruby gem</a></li>
+      <li><a href="/v2/doc/jquery.html">JQuery</a></li>
+    </ul>
+
+    <h2><a id="endpoint">Endpoint</a></h2>
+
+    <p>The endpoint for this version of the API is
+      <code>http://api.vodpod.com/v2/</code>. All paths are relative to this
+      URI.</p>
+
+    <p>Parameters may be passed either GET or POST-style. POST is strongly
+      encouraged for sizeable requests like collecting videos or updating
+      objects.</p>
+
+    <h2><a id="api_keys">API and Auth Keys</a></h2>
+
+    <p>All calls require either an <em>API key</em> or an <em>authorization
+        key</em>. These may be found in your <a
+        href="http://vodpod.com/account/edit/advanced/">profile settings</a>.
+      An API key is semi-public; it is used to identify the caller's account,
+      but is not secret. An auth key is private; it is used to authorize API
+      calls which modify data.</p>
+
+    <h2><a id="formats">Formats</a></h2>
+
+    <p>Responses to API requests are provided in either <a href="http://en.wikipedia.org/wiki/XML">XML</a> or <a href="http://www.json.org/">JSON</a>. The URI path determines the nature of the response.</p>
+
+    <p>The default is to provide you with a human-readable pretty-printed
+      (JSON) response. The content-type will be text/plain.</p>
+
+    <code class="block">/search?api_key=...&amp;query=kittens</code>
+
+    <p>If you specify .json or .js at the end of the path, the API will provide
+      compact (non-pretty-printed) JSON. The content-type will be
+      application/json. You should use this in your API calls whenever you
+      would like a JSON response.</p>
+
+    <code class="block">/search<em>.json</em>?api_key=...&amp;query=kittens</code>
+
+    <p>If you use the .jsonp extension <em>and</em> pass a <code>callback</code> parameter in the URL, the API will return <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">JSONP</a>: the JSON response, wrapped in the callback function you requested. The content-type will be application/javascript, suitable for embedding in a script tag.</p>
+
+    <code class="block">/search<em>.jsonp</em>?api_key=...&amp;query=kittens&amp;<em>callback=my_func</em></code>
+
+    <p>If you specify .xml at the end of the path, the API will generate an XML
+      document. The content-type will be text/xml. You should use this in your
+      API calls whenever you would like an XML response.</p>
+
+    <code class="block">/search<em>.xml</em>?api_key=...&amp;query=kittens</code>
+    
+    <p>Which format should you use? It depends on what you're doing.</p>
+
+    <p><em>XML</em> is widely available, and everyone knows how to work with
+      it. If you have a fast XML parser (such as the GNOME project's <a
+        href="http://xmlsoft.org/">libxml2</a>) the XML format is likely to be
+      very quick and lightweight. XML documents have order, which makes it a
+      natural language for expressing the ordered lists of named objects in the
+      Vodpod API. On the other hand, it requires awkward escaping to represent
+      many special characters in XML. In the absence of a formal XML schema,
+      you will also need to cast attribute values appropriately.</p>
+
+    <p><em>JSON</em> is a subset of the ECMAScript language. It is compact,
+    well-defined, and extremely easy to parse. If you are working in
+    javascript, JSON is the obvious format to use. Escaping is minimal, and
+    there is no need to worry about types. Finally, the API can produce JSON
+    responses faster.
+   
+    <p><em>JSONP</em> (extension <code>.jsonp</code>) also allows you to make cross-site requests in the browser.</p>
+
+    <p>When you use the JSON API, every response is an array. The first element
+      is a boolean describing the status:</p>
+
+      <dl>
+        <dt>true</dt><dd>Success</dd>
+        <dt>false</dt><dd>Failure</dd>
+      </dl>
+
+      <p>Additional status types may be declared in the future. The second
+        element contains the data.</p>
+
+    <code class="block">A user
+  [true, {'aphyr', 'description': '...'}]
+  
+A list of users
+  [true, [{'name': 'aphyr'}, {'name': 'spencer'}, ...]]
+  
+An error
+  [false, {'message': 'something terrible occurred'}]</code>
+
+    <h2><a id="errors">Errors</a></h2>
+
+    <p>If something goes wrong during a request, the API will set the HTTP
+    status code to 4xx or 5xx. It will also return an Error object. In XML,
+    just look for a root object of <code>&lt;error&gt;</code>. In JSON, use the
+    </result>result</code> code: false indicates an error. You can find out
+    what happened from the <code>message</code> attribute of the response.</p>
+
+    <code class="block">&lt;error&gt;
+  &lt;message&gt;
+    unable to collect video: no embed code or URI given
+  &lt;/message&gt;
+  &lt;/error&gt;</code>
+
+    <h2><a id="rate_limits">Rate Limits</a></h2>
+
+    <p>The API limits you to a certain number of maximum requests per hour.
+    When you have exceeded the allowed number of requests, further requests
+    will yield "rate limit exceeded" errors with an HTTP 403 status. If you need more capacity, send us an email at <a href="mailto:support@vodpod.com">support@vodpod.com</a>.</p>
+    
+    <p>The current rate-limit status is included in the HTTP headers of every
+    response.</p>
+
+    <dl>
+      <dt>X-RateLimit-Limit</dt>
+        <dd>The total number of requests allowed in a period.</dd>
+      <dt>X-RateLimit-Remaining</dt>
+        <dd>The number of requests you have left in this period.</dd>  
+      <dt>X-RateLimit-Reset</dt>
+        <dd>When your limits will be reset to X-RateLimit-Limit.</dd>
+    </dl>
+
+    <p>This information is also available from the <a href="/v2/doc/paths/_rate_limits.html">/rate_limits</a> path.</p>
+
+    <p>Your application should cache responses from the API intelligently. You
+    can use a caching proxy (e.g. Varnish, Squid) to speed up your pages and minimize API requests. More advanced users can use a local database or cache (SQL, in-memory structures, memcache, various NoSQL datastores) to store API data and fetch updates as needed. Rendering pages from your local cache will improve performance and reliability as well as minimizing your demands on the API.</p>
+
+    <h2><a id="sorting">Sorting</a></h2>
+    <p>Some fields may be sorted on. Where this is possible, two parameters are
+    made available:</p>
+    
+    <div class="params">
+      <dl>
+        <dt>sort</dt>
+        <dd>The name of the field to sort by, such as <code>date</code>.
+        <dt>order</dt>
+        <dd>One of <code>asc</code> or <code>desc</code>.
+      </dl>
+    </div>
+
+    <h2><a id="pagination">Pagination</a></h2>
+
+    <p>When you request lists of objects, the server will provide you with a
+      special result set indicating the total number of results. In XML, this
+      looks like a node: <code>&lt;collections total="24"&gt;</code>. In JSON,
+      result sets are given as hashes with two keys: <code>"total"</code> and
+      <code>"results"</code>.</p>
+
+    <p>You can use the <code>per_page</code> and <code>limit</code> parameters
+      to determine how many results to retrieve at one time. <code>Limit</code>
+      takes precedence over <code>per_page</code>, although both have the same
+      meaning.
+
+      <p>To paginate, you can either specify the <code>page</code> parameter
+        (page 1, 2, 3, etc.), or give an <code>offset</code>, returning results
+        beginning with number 0, 1, 2, and so forth. Pages are indexed
+        beginning at 1; offsets begin at 0. Offset takes precedence over
+        per_page, if both are given.</p>
+
+    <h2><a id="dates">Dates</a></h2>
+
+    <p>All dates and datetimes are returned in ISO8601 (XML Schema) format.</p>
+
+    <h2><a id="guidelines">Use Guidelines</a></h2>
+
+    <p>If you're using the Vodpod API to incorporate videos onto a site or
+    application, please follow these guidelines. Your support helps Vodpod
+    offer this service for free.</p>
+
+    <p>Each page that is powered by or incorporates videos from the Vodpod API
+    should include one of our approved logos below, adjacent to the video or
+    selection of videos. The logo should be hyperlinked to <a
+      href="http://vodpod.com">http://vodpod.com</a></p>
+
+    <p>Link back to Vodpod's video, tag, collection, and user pages wherever
+    you display those items. Use the <code>url</code> attributes on the API
+    objects you request.
+  
+  </div>
+</div>
+</body>
+</html>

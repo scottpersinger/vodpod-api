@@ -1,0 +1,466 @@
+---
+- path: /me
+  example: /me
+  desc: Alias for /users/<user>.
+- path: /my
+  example: /my/collections
+  desc: |-
+    Alias for /users/<user>, where <user> is the user associated with the API or Auth key.
+- path: /rate_limits
+  desc: |- Shows your current rate-limit status. This data is also included in the HTTP X-RatelLimit headers for each response. Limit is the number of total requests per interval. Interval is the length of the rate-limit interval in seconds. Reset is the time when your remaining requests will be reset. Remaining is the number of requests you have left in this interval.
+  params:
+    api_key: API key.
+  example: /rate_limits
+- path: /search
+  desc: |- Searches for Videos in the entire Vodpod database.
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    query: The terms to search for.
+  example: /search?query=why+the+lucky+stiff&limit=1
+- path: /users/<user>/collections/<collection>/videos/<key>/collection_comments
+  desc: |-
+    A list of the Comments associated with a specific video in a collection. This selects comments made *only* on this collection's version of the video.
+  example: /users/spencer/collections/electro/videos/432984/comments
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+- path: /users/<user>/collections/<collection>/videos/<key>/collection_comments/new
+  desc: |-
+    With an HTTP POST, creates a CollectionVideoComment on the video in question. This comment is bound to your collection and does not appear on vodpod.com. It will appear on vodspots, and can be retrieved with <video>/collection_comments. If you are creating a third-party site which needs to store comments on videos, this is for you.
+    If you don't specify a user, your user ID will be used.
+  method: post
+  example: /users/aphyr/collections/aphyr/videos/2901977/collection_comments/new?auth_key=xxx&text=An+awesome+video&user[email]=aphyr@aphyr.com&user[name]=Aphyr
+  example_json: |-
+    {"created_at"=>"2010-03-02T11:07:54-08:00",
+     "text"=>"An awesome video",
+     "key"=>1234,
+     "approved"=>true,
+       "user"=>
+      {"name"=>"Aphyr",
+       "created_at"=>"2010-03-02T11:07:54-08:00",
+       "thumbnail"=>
+        "http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&size=60&default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif",
+       "url"=>nil,
+       "key"=>"guest"}}
+  example_xml: |-
+    <collection_comment>
+      <text>An awesome video</text>
+      <key>1234</key>
+      <approved>true</approved>
+      <user>
+        <name>Aphyr</name>
+        <url></url>
+        <key>guest</key>
+        <created_at>2010-03-02T11:07:54-08:00</created_at>
+        <thumbnail>http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;size=60&amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif</thumbnail>
+      </user>
+    </collection_comment>
+  params:
+    api_key: API key.
+    auth_key: Auth key.
+    text: The text of the comment (required).
+    user[email]: The comment author's email.
+    user[name]: The comment author's name.
+            
+- path: /users/<user>/collections/<collection>/videos/<key>/comments
+  desc: |-
+    A list of the Comments associated with a video. All collected versions of a video have the same comment set for this method. If you are looking for the comments made *only* on this collection's version of the video, see /users/<user>/collections/<collection>/videos/<key>/collection_comments.
+  example: /users/spencer/collections/electro/videos/432984/comments
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+- path: /users/<user>/collections/<collection>/videos/<key>
+  desc: |-
+    Returns a specific Video in the context of a collection. Instead of the canonical title and description, returns the title and description the collector assigned. _key_ is the numeric video key.
+  example: /users/spencer/collections/electro/videos/381539?include=tags
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+- path: /users/<user>/collections/<collection>/videos
+  desc: A list of Videos within a collection.
+  example: /users/aphyr/collections/aphyr/videos?include=tags&limit=2
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+    tag: A tag to filter the resulting videos by.
+- path: /users/<user>/collections/<collection>
+  desc: Describes a specific Collection belonging to a User.
+  example: /users/spencer/collections/spencerpod
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.   
+- path: /users/<user>/collection
+  desc: Alias for /user/<user>/collections/<collection>, where <collection> is the default Collection for <user>.
+  example: /users/aphyr/collection
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+- path: /users/<user>/videos/<id>
+  desc: Returns a CollectionVideo collected by a user.
+  example: /users/aphyr/videos/2144690
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+- path: /users/<user>/videos
+  desc: Lists all videos a user has collected.
+  example: /users/aphyr/videos?limit=2
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+    tag: A tag to filter the resulting videos by.
+- path: /users/<user>
+  desc: Describes a single user.
+  example: /users/aphyr?include=following,followers
+  params:    
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+- path: /videos
+  desc: A list of videos in the entire Vodpod system. You must specify _tag_ to use this path. This path is not sortable.
+  example: /videos?tag=game&limit=1
+  params:
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    tag: A tag to filter the resulting videos by.
+- path: /videos/<key>
+  desc: |-
+    Returns a specific video in the Vodpod index. _Key_ is the numeric video key.
+  example: /videos/381539?include=tags
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+- path: /videos/<key>/comments
+  desc: |-
+    A list of the Comments associated with a video. All collected versions of a video have the same comment set for this method. If you are looking for the comments made *only* on this collection's version of the video, see /users/<user>/collections/<collection>/videos/<key>/collection_comments.
+  example: /videos/432984/comments
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+- path: /users/<user>/collections/<collection>/videos
+  desc: A list of Videos within a collection.
+  example: /users/aphyr/collections/aphyr/videos?include=tags&limit=2
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    sort: The name of an attribute to sort by. Only certain columns are 
+          sortable; see the object's documentation for details.
+    order: One of _asc_ or _desc_, for ascending and descending sort orders, 
+           respectively.
+    tag: A tag to filter the resulting videos by.
+- path: /users/<user>/collections/<collection>/search
+  desc: |- Searches for Videos in a specific collection.
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+    query: The terms to search for.
+  example: /users/aphyr/collections/aphyr/search?query=supermoto&limit=1
+- path: /users/<user>/collections/<collection>/video/<video>/collection_comments/<comment>/delete
+  desc: |- Delete a specific CollectionVideoComment by key. An authorization key is required. This method must be called with an HTTP POST, and returns _true_ when successful.
+  params:
+    api_key: API key.
+    auth_key: Auth key.
+  example: /users/aphyr/collections/aphyr/video/143423/collection_comments/28542/delete?auth_key=xxx
+  example_json: |- [true, true]
+  example_xml: <true/>
+- path: /users/<user>/feed
+  desc: |- Returns the activity feed for a user. You may only retrieve your own feed.
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+  example: /my/feed?limit=2
+- path: /users/<user>/collections/<collection>/videos/<key>/comments/new
+  desc: |-
+    With an HTTP POST, creates a Comment on the video in question. This comment is made by your user account and will appear on Vodpod.com. It may be retrieved with <video>/comments.
+  method: post
+  example: /users/aphyr/collections/aphyr/videos/2901977/comments/new?auth_key=xxx&text=An+awesome+video
+  example_json: |-
+    {"created_at"=>"2010-03-02T11:07:54-08:00",
+     "text"=>"An awesome video",
+     "approved"=>true,
+     "key"=>1234,
+     "user"=>
+      {"name"=>"Aphyr",
+       "created_at"=>"2010-03-02T11:07:54-08:00",
+       "thumbnail"=>
+        "http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&size=60&default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif",
+       "url"=>"http://aphyr.com",
+       "key"=>"aphyr"}}
+  example_xml: |-
+    <collection_comment>
+      <text>An awesome video</text>
+      <approved>true</approved>
+      <key>1234</key>
+      <user>
+        <name>Aphyr</name>
+        <url>http://aphyr.com</url>
+        <key>aphyr</key>
+        <created_at>2010-03-02T11:07:54-08:00</created_at>
+        <thumbnail>http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;size=60&amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif</thumbnail>
+      </user>
+    </collection_comment>
+  params:
+    api_key: API key.
+    auth_key: Auth key.
+    text: The text of the comment (required).
+- path: /videos/<key>/recommend
+  desc: |-
+    Recommends a video. You can recommend a video only once. Returns true if
+    successful.
+  method: post
+  params: 
+    api_key: API key.
+    auth_key: Auth key.
+  example: /videos/2901977/recommend?auth_key=xxx
+  example_json: |-
+    true
+  example_xml: |-
+    <xml version="1.0" encoding="UTF-8"?>
+      <true />
+    </xml>
+- path: /videos/<key>/comments/new
+  desc: |-
+    With an HTTP POST, creates a Comment on the video in question. This comment is made by your user account and will appear on Vodpod.com. It may be retrieved with <video>/comments.
+  method: post
+  params:
+    api_key: API key.
+    auth_key: Auth key.
+    text: The text of the comment (required).
+  example: /videos/2901977/comments/new?auth_key=xxx&text=An+awesome+video
+  example_json: |-
+    {"created_at"=>"2010-03-02T11:07:54-08:00",
+     "text"=>"An awesome video",
+     "key"=>1234,
+     "approved"=>true,
+       "user"=>
+      {"name"=>"Aphyr",
+       "created_at"=>"2010-03-02T11:07:54-08:00",
+       "thumbnail"=>
+        "http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&size=60&default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif",
+       "url"=>"http://aphyr.com",
+       "key"=>"aphyr"}}
+  example_xml: |-
+    <collection_comment>
+      <text>An awesome video</text>
+      <key>1234</key>
+      <approved>true</approved>
+      <user>
+        <name>Aphyr</name>
+        <url>http://aphyr.com</url>
+        <key>aphyr</key>
+        <created_at>2010-03-02T11:07:54-08:00</created_at>
+        <thumbnail>http://www.gravatar.com/avatar.php?gravatar_id=bbff5c2a12084edca6bbcb966fad3863&amp;size=60&amp;default=http://s3.amazonaws.com/vodpod.com/images/default_avatar2_60.gif</thumbnail>
+      </user>
+    </collection_comment>
+- path: /users/<user>/following
+  desc: |-
+    A list of users this user is following.
+  method: get
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+  example: /users/aphyr/following?limit=2
+- path: /users/<user>/followers
+  desc: |-
+    A list of users who are following this user.
+  method: get
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+  example: /users/aphyr/following?limit=2
+- path: /users/<user>/following/new
+  desc: |-
+    Follows a new user specified by _key_. Authentication is required. 
+    Returns true on success. Returns an error if you're already following that user.
+  method: post
+  params:
+    api_key: API key
+    auth_key: Auth key.
+    key: The key of the User to follow. Must not be your own user ID.
+  example: /users/aphyr/following/new?auth_key=xxx&key=pkulak
+  example_xml: <true />
+  example_json: |-
+    true 
+- path: /users/<user>/following/<user>/delete
+  desc: |-
+    Unfollows the given User. Authentication is required. Returns
+    true on success.
+  method: post
+  params:
+    api_key: API key
+    auth_key: Auth key.
+  example: /users/aphyr/following/pkulak/unfollow?auth_key=xxx
+  example_xml: |-
+    <true />
+  example_json: |-
+    true
+- path: /users/<user>/following/<user>
+  desc: Returns a User being followed by another. Returns an error if the first user is not following the second.
+  method: get
+  params: 
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+  example: /users/aphyr/following/pkulak
+- path: /users/<user>/feed_checked
+  desc: Updates your feed_checked_at value to the current time. See User for more about when you should call this. Requires authorization. Can only be called for the user you have authenticated as.
+  params:
+    api_key: API key.
+    auth_key: Auth key.
+  example: /my/feed_checked?auth_key=xxx
+- path: /categories
+  desc: Returns a list of Category objects, like "Popular", "Music", "Tech", etc. This path will return all top-level categories by default; there is no need to use pagination unless you prefer smaller result sets.
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+    offset: How far into the result set to begin returning objects. Offset 0
+            returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...
+    limit: The number of results to return at a time. _Limit_ and _per_page_ 
+           are synonyms. If both are provided, _limit_ takes precedence.
+    per_page: The number of results to return at a time. _Limit_ and _per_page_
+              are synonyms. If both are provided, _limit_ takes precedence.
+    page: The page of the results to return. If _offset_ is provided, it takes 
+          precedence over _page_.
+  example: /categories
+- path: /categories/<category>
+  desc: |-
+    A specific Category. You can continue nesting category names to descend
+    into subcategories; for example, _/categories/music/country.
+  params:
+    api_key: API key.
+    include: Which attributes will be included in the result set. Some 
+             attributes are always provided.
+  example: /categories/funny

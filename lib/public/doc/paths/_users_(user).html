@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;</h1><div class="description"><p>Describes a single user.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/users/aphyr?include=following,followers</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;user&gt;
+  &lt;description&gt;I&#39;m a developer here at Vodpod. I&#39;m also a freelance photographer, Aikido nut, gamer, book enthusiast, and physics and math geek.&lt;/description&gt;
+  &lt;feed_checked_at&gt;2010-10-11T11:02:44-07:00&lt;/feed_checked_at&gt;
+  &lt;key&gt;aphyr&lt;/key&gt;
+  &lt;name&gt;aphyr&lt;/name&gt;
+  &lt;points&gt;15&lt;/points&gt;
+  &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/493234.medium.jpg&lt;/thumbnail&gt;
+  &lt;videos_count&gt;348&lt;/videos_count&gt;
+  &lt;following&gt;
+    &lt;user&gt;
+      &lt;key&gt;spencer&lt;/key&gt;
+      &lt;name&gt;Spencer&lt;/name&gt;
+      &lt;points&gt;83&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;tommygee&lt;/key&gt;
+      &lt;name&gt;tommygee&lt;/name&gt;
+      &lt;points&gt;18&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/670484.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;blackrabbit&lt;/key&gt;
+      &lt;name&gt;blackrabbit&lt;/name&gt;
+      &lt;points&gt;203&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;markh&lt;/key&gt;
+      &lt;name&gt;Mark H&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/35.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;towleroad&lt;/key&gt;
+      &lt;name&gt;towleroad&lt;/name&gt;
+      &lt;points&gt;479&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/110511.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;pkulak&lt;/key&gt;
+      &lt;name&gt;pkulak&lt;/name&gt;
+      &lt;points&gt;25&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;gayrightsmedia&lt;/key&gt;
+      &lt;name&gt;Gay Rights Media&lt;/name&gt;
+      &lt;points&gt;15&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/417605.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;lauren&lt;/key&gt;
+      &lt;name&gt;Lauren&lt;/name&gt;
+      &lt;points&gt;12&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/318239.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+  &lt;/following&gt;
+  &lt;followers&gt;
+    &lt;user&gt;
+      &lt;key&gt;scottp&lt;/key&gt;
+      &lt;name&gt;scottp&lt;/name&gt;
+      &lt;points&gt;15&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/1.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;spencer&lt;/key&gt;
+      &lt;name&gt;Spencer&lt;/name&gt;
+      &lt;points&gt;83&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;tommygee&lt;/key&gt;
+      &lt;name&gt;tommygee&lt;/name&gt;
+      &lt;points&gt;18&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/670484.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;blackrabbit&lt;/key&gt;
+      &lt;name&gt;blackrabbit&lt;/name&gt;
+      &lt;points&gt;203&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;justwatchitnow&lt;/key&gt;
+      &lt;name&gt;justwatchitnow&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/914072.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;markh&lt;/key&gt;
+      &lt;name&gt;Mark H&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/35.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;easy2drink&lt;/key&gt;
+      &lt;name&gt;easy2drink&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/903048.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;pkulak&lt;/key&gt;
+      &lt;name&gt;pkulak&lt;/name&gt;
+      &lt;points&gt;25&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;robertobaguiar&lt;/key&gt;
+      &lt;name&gt;robertobaguiar&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;pssionemobile&lt;/key&gt;
+      &lt;name&gt;P@ssioneMobile&lt;/name&gt;
+      &lt;points&gt;3&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/1709.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;weloveshortfilms&lt;/key&gt;
+      &lt;name&gt;We Love Short Films&lt;/name&gt;
+      &lt;points&gt;15&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/745873.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;garylimls&lt;/key&gt;
+      &lt;name&gt;garylim.ls&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+  &lt;/followers&gt;
+&lt;/user&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;name&quot;: &quot;aphyr&quot;,
+    &quot;feed_checked_at&quot;: &quot;2010-10-11T11:02:44-07:00&quot;,
+    &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/493234.medium.jpg&quot;,
+    &quot;followers&quot;: [
+      {
+        &quot;name&quot;: &quot;scottp&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/1.medium.jpg&quot;,
+        &quot;points&quot;: 15,
+        &quot;key&quot;: &quot;scottp&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Spencer&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&quot;,
+        &quot;points&quot;: 83,
+        &quot;key&quot;: &quot;spencer&quot;
+      },
+      {
+        &quot;name&quot;: &quot;tommygee&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/670484.medium.jpg&quot;,
+        &quot;points&quot;: 18,
+        &quot;key&quot;: &quot;tommygee&quot;
+      },
+      {
+        &quot;name&quot;: &quot;blackrabbit&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&quot;,
+        &quot;points&quot;: 203,
+        &quot;key&quot;: &quot;blackrabbit&quot;
+      },
+      {
+        &quot;name&quot;: &quot;justwatchitnow&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/914072.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;justwatchitnow&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Mark H&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/35.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;markh&quot;
+      },
+      {
+        &quot;name&quot;: &quot;easy2drink&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/903048.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;easy2drink&quot;
+      },
+      {
+        &quot;name&quot;: &quot;pkulak&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&quot;,
+        &quot;points&quot;: 25,
+        &quot;key&quot;: &quot;pkulak&quot;
+      },
+      {
+        &quot;name&quot;: &quot;robertobaguiar&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;robertobaguiar&quot;
+      },
+      {
+        &quot;name&quot;: &quot;P@ssioneMobile&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/1709.medium.jpg&quot;,
+        &quot;points&quot;: 3,
+        &quot;key&quot;: &quot;pssionemobile&quot;
+      },
+      {
+        &quot;name&quot;: &quot;We Love Short Films&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/745873.medium.jpg&quot;,
+        &quot;points&quot;: 15,
+        &quot;key&quot;: &quot;weloveshortfilms&quot;
+      },
+      {
+        &quot;name&quot;: &quot;garylim.ls&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;garylimls&quot;
+      }
+    ],
+    &quot;points&quot;: 15,
+    &quot;videos_count&quot;: 348,
+    &quot;description&quot;: &quot;I&#39;m a developer here at Vodpod. I&#39;m also a freelance photographer, Aikido nut, gamer, book enthusiast, and physics and math geek.&quot;,
+    &quot;key&quot;: &quot;aphyr&quot;,
+    &quot;following&quot;: [
+      {
+        &quot;name&quot;: &quot;Spencer&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/8.medium.jpg&quot;,
+        &quot;points&quot;: 83,
+        &quot;key&quot;: &quot;spencer&quot;
+      },
+      {
+        &quot;name&quot;: &quot;tommygee&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/670484.medium.jpg&quot;,
+        &quot;points&quot;: 18,
+        &quot;key&quot;: &quot;tommygee&quot;
+      },
+      {
+        &quot;name&quot;: &quot;blackrabbit&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&quot;,
+        &quot;points&quot;: 203,
+        &quot;key&quot;: &quot;blackrabbit&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Mark H&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/35.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;markh&quot;
+      },
+      {
+        &quot;name&quot;: &quot;towleroad&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/110511.medium.jpg&quot;,
+        &quot;points&quot;: 479,
+        &quot;key&quot;: &quot;towleroad&quot;
+      },
+      {
+        &quot;name&quot;: &quot;pkulak&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&quot;,
+        &quot;points&quot;: 25,
+        &quot;key&quot;: &quot;pkulak&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Gay Rights Media&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/417605.medium.jpg&quot;,
+        &quot;points&quot;: 15,
+        &quot;key&quot;: &quot;gayrightsmedia&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Lauren&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/318239.medium.jpg&quot;,
+        &quot;points&quot;: 12,
+        &quot;key&quot;: &quot;lauren&quot;
+      }
+    ]
+  }
+]</pre></code></td></tr></table></div></div></body></html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /my</h1><div class="description"><p>Alias for <a href="/v2/doc/paths/_users_(user).html">/users/&lt;user&gt;</a>, where &lt;user&gt; is the user associated with the API or Auth key.</p></div><div class="example"><h3>Example</h3><code>/my/collections</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;collections total=&quot;8&quot;&gt;
+  &lt;collection&gt;
+    &lt;description&gt;Is Nice.  I Like You.&lt;/description&gt;
+    &lt;key&gt;borat&lt;/key&gt;
+    &lt;name&gt;Best Sacha Baron Cohen Videos&lt;/name&gt;
+    &lt;videos_count&gt;25&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;A collection of great electro videos from the likes of Daft Punk, Justice, Digitalism and more&lt;/description&gt;
+    &lt;key&gt;electro&lt;/key&gt;
+    &lt;name&gt;Electronic Music Videos&lt;/name&gt;
+    &lt;videos_count&gt;73&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description/&gt;
+    &lt;key&gt;flyfishingvideos&lt;/key&gt;
+    &lt;name&gt;Fly Fishing Videos&lt;/name&gt;
+    &lt;videos_count&gt;28&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;Spencer&#39;s favorite viral videos&lt;/description&gt;
+    &lt;key&gt;spencerpod&lt;/key&gt;
+    &lt;name&gt;SpencerPod&lt;/name&gt;
+    &lt;videos_count&gt;528&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;key&gt;spencertest&lt;/key&gt;
+    &lt;name&gt;spencertest&lt;/name&gt;
+    &lt;videos_count&gt;85&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;From Star Wars kid to the Numa Numa dance, this Pod contains the greatest viral videos of all time.&lt;/description&gt;
+    &lt;key&gt;viralvideos&lt;/key&gt;
+    &lt;name&gt;Best Viral Videos&lt;/name&gt;
+    &lt;videos_count&gt;29&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;key&gt;wineenthusiasts&lt;/key&gt;
+    &lt;name&gt;Wine Enthusiasts&lt;/name&gt;
+    &lt;videos_count&gt;14&lt;/videos_count&gt;
+  &lt;/collection&gt;
+  &lt;collection&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;key&gt;zune&lt;/key&gt;
+    &lt;name&gt;Zune - Welcome to the Social&lt;/name&gt;
+    &lt;videos_count&gt;9&lt;/videos_count&gt;
+  &lt;/collection&gt;
+&lt;/collections&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;results&quot;: [
+      {
+        &quot;name&quot;: &quot;Best Sacha Baron Cohen Videos&quot;,
+        &quot;videos_count&quot;: 25,
+        &quot;description&quot;: &quot;Is Nice.  I Like You.&quot;,
+        &quot;key&quot;: &quot;borat&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Electronic Music Videos&quot;,
+        &quot;videos_count&quot;: 73,
+        &quot;description&quot;: &quot;A collection of great electro videos from the likes of Daft Punk, Justice, Digitalism and more&quot;,
+        &quot;key&quot;: &quot;electro&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Fly Fishing Videos&quot;,
+        &quot;videos_count&quot;: 28,
+        &quot;description&quot;: null,
+        &quot;key&quot;: &quot;flyfishingvideos&quot;
+      },
+      {
+        &quot;name&quot;: &quot;SpencerPod&quot;,
+        &quot;videos_count&quot;: 528,
+        &quot;description&quot;: &quot;Spencer&#39;s favorite viral videos&quot;,
+        &quot;key&quot;: &quot;spencerpod&quot;
+      },
+      {
+        &quot;name&quot;: &quot;spencertest&quot;,
+        &quot;videos_count&quot;: 85,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;key&quot;: &quot;spencertest&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Best Viral Videos&quot;,
+        &quot;videos_count&quot;: 29,
+        &quot;description&quot;: &quot;From Star Wars kid to the Numa Numa dance, this Pod contains the greatest viral videos of all time.&quot;,
+        &quot;key&quot;: &quot;viralvideos&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Wine Enthusiasts&quot;,
+        &quot;videos_count&quot;: 14,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;key&quot;: &quot;wineenthusiasts&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Zune - Welcome to the Social&quot;,
+        &quot;videos_count&quot;: 9,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;key&quot;: &quot;zune&quot;
+      }
+    ],
+    &quot;total&quot;: 8
+  }
+]</pre></code></td></tr></table></div></div></body></html>

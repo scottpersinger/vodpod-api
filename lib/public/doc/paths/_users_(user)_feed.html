@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /users/&lt;user&gt;/feed</h1><div class="description"><p>Returns the activity feed for a user. You may only retrieve your own feed.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd><dt>limit</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>offset</dt><dd>How far into the result set to begin returning objects. Offset 0 returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...</dd><dt>page</dt><dd>The page of the results to return. If <code>offset</code> is provided, it takes precedence over <code>page</code>.</dd><dt>per_page</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/my/feed?limit=2</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;feed total=&quot;2447&quot; unread=&quot;0&quot;&gt;
+  &lt;news_feed_item&gt;
+    &lt;action&gt;invite_friends&lt;/action&gt;
+    &lt;created_at&gt;2010-10-07T14:46:00-07:00&lt;/created_at&gt;
+    &lt;group/&gt;
+    &lt;guest_user/&gt;
+    &lt;key&gt;29481685&lt;/key&gt;
+    &lt;tag/&gt;
+    &lt;text&gt;50&lt;/text&gt;
+    &lt;user/&gt;
+    &lt;user2/&gt;
+    &lt;video/&gt;
+  &lt;/news_feed_item&gt;
+  &lt;news_feed_item&gt;
+    &lt;action&gt;suggest_related_users&lt;/action&gt;
+    &lt;created_at&gt;2010-10-07T14:29:12-07:00&lt;/created_at&gt;
+    &lt;group/&gt;
+    &lt;guest_user/&gt;
+    &lt;key&gt;29481684&lt;/key&gt;
+    &lt;tag/&gt;
+    &lt;text&gt;50&lt;/text&gt;
+    &lt;user/&gt;
+    &lt;user2/&gt;
+    &lt;video/&gt;
+  &lt;/news_feed_item&gt;
+&lt;/feed&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;results&quot;: [
+      {
+        &quot;group&quot;: null,
+        &quot;created_at&quot;: &quot;2010-10-07T14:46:00-07:00&quot;,
+        &quot;action&quot;: &quot;invite_friends&quot;,
+        &quot;tag&quot;: null,
+        &quot;text&quot;: &quot;50&quot;,
+        &quot;user2&quot;: null,
+        &quot;video&quot;: null,
+        &quot;guest_user&quot;: null,
+        &quot;user&quot;: null,
+        &quot;key&quot;: 29481685
+      },
+      {
+        &quot;group&quot;: null,
+        &quot;created_at&quot;: &quot;2010-10-07T14:29:12-07:00&quot;,
+        &quot;action&quot;: &quot;suggest_related_users&quot;,
+        &quot;tag&quot;: null,
+        &quot;text&quot;: &quot;50&quot;,
+        &quot;user2&quot;: null,
+        &quot;video&quot;: null,
+        &quot;guest_user&quot;: null,
+        &quot;user&quot;: null,
+        &quot;key&quot;: 29481684
+      }
+    ],
+    &quot;unread&quot;: 0,
+    &quot;total&quot;: 2447
+  }
+]</pre></code></td></tr></table></div></div></body></html>

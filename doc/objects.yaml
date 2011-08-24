@@ -1,0 +1,243 @@
+---
+Category:
+  desc: |-
+    Videos are sorted into categories. Users who collect successful videos accrue points associated with the categories their videos belong to. Categories are a great way to discover users and videos in a particular field, and motivate users to compete to collect relevant, popular videos.
+  attrs:
+#    daily_count: The number of videos added to this category today.
+    key: The unique name for this category, e.g. "music".
+    name: The human name for this category, e.g. "Music".
+    subcategories: An array of Categorys belonging to this one.
+    subcategories_count: The total number of subcategories.
+    top_users: An array of Users, sorted from most points to least within the category.
+    recommended_users: An array of Users who frequently collect videos in this category.
+#    videos_count: The total number of videos in this category.
+Collection:
+  desc: |-
+    A Collection is a group of Videos managed by one User.
+  attrs:
+    created_at: The date and time the collection was created at.
+    description: A short piece of text describing the collection.
+    key: The short name of the collection, used in urls.
+    tags: A list of Tags on videos in this collection.
+    name: The human-readable name of the collection.
+    tags_count: The total number of tags associated with videos in this collection.
+    thumbnail: A URL to a thumbnail for this collection (drawn from the videos)
+    total_views: The total number of views for videos in this collection.
+    user: The user who manages the collection.
+    url: A WWW URL to view the collection.
+    updated_at: The date and time the collection was updated at.
+    videos: The videos which belong to this collection.
+    videos_count: The number of videos in this collection.
+    weekly_views: The number of views this week for videos in this collection.
+CollectionVideoComment:
+  desc: |-
+    A CollectionVideoComment is a comment on a video, specific to one collection. Comments are displayed on vodpod.com; CollectionVideoComments are used in vodspots and other custom sites.
+  attrs:
+    key: A unique integer ID for this comment.
+    approved: Whether or not the comment has passed moderation. Defaults to true.
+    created_at: The date and time the comment was created at.
+    text: The text of the comment.
+    user: The User who posted the comment.
+Comment:
+  desc: |-
+    A Comment is a single text record attached to a Video.
+  attrs:
+    key: A unique integer ID for this comment.
+    user: The vodpod user which created the comment. If the comment was made anonymously, a guest user is given.
+    text: The text of the comment.
+    created_at: The date and time the collection was created at.
+Error: 
+  desc: An error message from the API.
+  attrs:
+    message: A text explanation of the error.
+Group:
+  desc: |-
+    Groups are community-driven sets of videos around a certain theme or topic.
+  attrs:
+    created_at: The date and time the group was created at.
+    updated_at: The date and time the group was last updated at.
+    title: The friendly name of the group
+    key: The URL-safe unique name of the group.
+GuestUser:
+  desc: |-
+    GuestUsers represent users who don't have an account. For example, an anonymous person commenting via a web form, but giving a username, has a GuestUser associated with their comment.
+  attrs:
+    name: The name provided by the guest user.
+    website: A URI, presumably, provided by the user.
+NewsFeedItem:
+  desc: |-
+    Each NewsFeedItem is an action displayed in the user's feed. They have a discrete _action_, which determines how the other fields are interpreted. They can also include explanatory human_readable _text_, and links to other users, guest users, videos, and tags involved. For example, user Aphyr might be notified that his friend Spencer is following Dandelion Salad. The item in Aphyr's feed would have action 'follow_user', user 'spencer', and user2 'dandelionsalad'.
+
+    NewsFeedItems are sorted in reverse chronological order, by default. Their effective date is _created_at_.
+  attrs:
+    action: The meaning of this feed item--e.g. "follow_user" or "add_video".
+    collection_video: The CollectionVideo associated with this action.
+    created_at: When the action happened.
+    group: The Group associated with this action.
+    guest_user: The GuestUser associated with this action.
+    key: The unique integer ID of this action.
+    owner: The User whose feed this item belongs in.
+    tag: The Tag associated with this action.
+    text: Human-readable explanatory text.
+    user: The User associated with this action.
+    user2: If the _user_ does something involving another User, this field is the subject.
+    video: The Video associated with this action.
+Tag:
+  desc: |-
+    A Tag is a short string attached to one or more Videos.
+  attrs:
+    count: When tags are provided as a part of a collection or user,
+      the _count_ attribute may be set to indicate how many videos
+      are associated with this tag. This attribute gives a good indication of
+      the importance of a tag within a collection or user.
+    collection_videos: The CollectionVideos tagged with this tag.
+    collection_videos_count: The total number of CollectionVideos tagged with this tag.
+    collections: Collections with videos tagged with this tag.
+    collections_count: The total number of collections which reference this tag.
+    
+    key: The unique identifier for the tag. Synonymous with _name_.
+    name: The tag text. For example, "comedy".
+    users: A list of Users who collected videos tagged with this tag.
+    users_count: The total number of users who have collected videos tagged with this tag.
+    videos: A list of Videos associated with the tag.
+    videos_count: The number of videos associated with this tag.
+User:
+  desc: |-
+    A User manages one or more Collections, may follow and be followed by other
+    Users, and comments/moderates Videos.
+  attrs:
+    created_at: The date and time the collection was created at.
+    collections: A list of collections this user owns.
+    collections_count: The total number of collections this user owns.
+    collection: The default collection for a user.
+    description: A short description of the user.
+    discovered_videos: A list of CollectionVideos this user was the first to submit to Vodpod.
+    discovered_videos_count: The number of videos this user was the first to submit to Vodpod.
+    feed_checked_at: |-
+      The last date the user saw their feed. You can use this value to indicate
+      the number of unseen feed items. If your application presents the feed to
+      a user, it can call /my/feed_checked to update this value. You should
+      only update /my/feed_checked when the user is likely to have *looked* at
+      the feed--if your window gains focus or receives interaction, if the user
+      selects the feed activity, responds to a notification, etc.
+    followers: A list of users who are following this user.
+    following: A list of users this user is following.
+    following_count: The number of users this user is following.
+    followers_count: The number of users following this user.
+    key: The username.
+    name: The full name of the user.
+    points: The total number of points this user has accumulated in the last 30 days.
+    updated_at: The date and time the collection was updated at.
+    urls: A list of web sites associated with the user.
+    tags: A list of tags associated with the videos the user collected.
+    tags_count: The total number of tags associated with this user's videos.
+    thumbnail: A URI to the thumbnail image of a user.
+    url: A URL to view this user.
+    videos: A list of CollectionVideos this user has collected.
+    videos_count: The number of videos this user has collected.
+CollectionVideo:
+  desc: |-
+    A CollectionVideo is a specific version of a Video. When a user collects a
+    video, either from some external video host (youtube) or from some video
+    already on Vodpod, a CollectionVideo is added to one of their Collections. 
+
+    Just like Videos, CollectionVideos include an embed code to view the video
+    in an HTML document, a thumbnail (provided by the Vodpod thumbnailer service or
+    the original host), and assorted metadata. CollectionVideos have multiple
+    Comments, belong to one Collection and User, and may have several Tags. 
+  attrs:
+    autoplay_embed: |-
+      Like embed, but with flash variables set so as to play the
+      video immediately upon loading.
+    collection: The Collection this video is a part of.
+    collection_comments: An array of Comments specifically on this CollectionVideo. Unlike _comments_, _collection_comments_ is not shared with any other versions of a video. It is typically only set for Vodspot use.
+    collections_count: The number of collections this video belongs to.
+    collection_comments_count: The total number of collection comments on this collection video.
+    collected_from_url: The URL that this video was collected from.
+    comments: An array of Comments on this video. Comments are shared between all CollectionVideos and Videos with the same key.
+    comments_count: The number of comments on this video.
+    description: A short text description of the video.
+    description: The original description from the video provider.
+    embed: The HTML embed tag for displaying this video.
+    embed_src: The src attribute for the HTML embed tag.
+    key: The numeric ID of the video.
+    media: The URI of the raw media file for this video.
+    media_240_mobile: The URI of a 240p mobile-ready MP4.
+    media_480_web: The URI of a 480p web-ready MP4.
+    ranking: The user-defined ordering for videos. Sorted in descending order by default. You can pass sort=ranking to get the same order used on vodpod.com.
+    recommends: The number of users who have recommended this video. Recommends are distint from collects.
+    tags: A collection of Tags on this video.
+    tags_count: The total number of tags associated with this video.
+    title: The human-readable title of the video.
+    thumbnail: A URL to the default thumbnail (100px wide).
+    thumbnail_80: |-
+      A URL to a small thumbnail of the video (80px wide)
+    thumbnail_160: |-
+      A URL to a medium thumbnail of the video (160px wide)
+    thumbnail_320: |-
+      A URL to a large thumbnail of the video (320px wide)
+    user: The user who collected this video.
+    url: A WWW URL to watch the video.
+    total_views: The total number of views for this video.
+    total_external_views: The total number of views for this video from sources outside Vodpod.
+    video_host: "Information about the original hosting site. Includes three attributes:\n
+  - description: The host's description of the video.\n
+  - domain: The domain we obtained the video from.\n
+  - url: The URL to view this video at the original host."
+    weekly_views: The number of views this week for this video.
+    created_at: the date and time this video was created at.
+Video:
+  desc: |-
+    Videos include an embed code to view the video in an HTML document, a
+    thumbnail (provided by the Vodpod thumbnailer service or the original
+    host), and assorted metadata. Videos have multiple Comments, collectors,
+    and Tags, and may belong to one Collection. They also have multiple CollectionVideos, corresponding
+    to each version of the video that belongs to some collection.
+
+    CollectionVideos and Videos use the same key.
+
+    A video may have a primary Comment, and several secondary Comments.
+    Typically, the comment is filled out by the user when the video is
+    collected. The original host's description of the video may also be
+    available in _host_description_.
+  attrs:
+    autoplay_embed: |-
+      Like embed, but with flash variables set so as to play the
+      video immediately upon loading.
+    collections: The Collections this video is a part of.
+    collections_count: The number of collections this video belongs to.
+    comments_count: The total number of comments on this video.
+    comments: The comment stream on this video. Includes comments made on all CollectionVideos with the same key.
+    collections: The Collections this video belongs to.
+    collection_videos: The collected versions of this video in those collections.
+    collection_videos_count: The number of collected versions of this video.
+    created_at: the date and time the video was created at.
+    description: A short text description of the video.
+    embed: The HTML embed tag for displaying this video.
+    embed_src: The src attribute for the HTML embed tag.
+    key: The numeric ID of the video.
+    media: The URI of the raw media file for this video.
+    media_240_mobile: The URI of a 240p mobile-ready MP4.
+    media_480_web: The URI of a 480p web-ready MP4.
+    recommends: The number of users who have recommended this video. Recommends are distint from collects.
+    tags: A collection of Tags on this video.
+    tags_count: The total number of tags associated with this video.
+    title: The human-readable title of the video.
+    thumbnail: A URL to the default thumbnail (100px wide).
+    thumbnail_80: |-
+      A URL to a small thumbnail of the video (80px wide)
+    thumbnail_160: |-
+      A URL to a medium thumbnail of the video (160px wide)
+    thumbnail_320: |-
+      A URL to a large thumbnail of the video (320px wide)
+    total_views: The total number of views for this video.
+    total_external_views: The total number of views for this video from sources outside Vodpod.
+    updated_at: The date and time the video was updated at.
+    url: A WWW URL to watch the video.
+    users: A list of users who have collected this video.
+    users_count: The total number of users who have collected this video.
+    video_host: "Information about the original hosting site. Includes three attributes:\n
+  - description: The host's description of the video.\n
+  - domain: The domain we obtained the video from.\n
+  - url: The URL to view this video at the original host."
+    weekly_views: The number of views this week for this video.

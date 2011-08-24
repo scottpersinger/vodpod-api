@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet">
+  <h1>JQuery plugin</h1>
+
+  <p>Here's a javascript object with some helper functions for working with the API. It uses jQuery for AJAX handling, but any library will do.</p>
+
+  <p style="font-size: 140%"><a href="http://vodpod.com/javascripts/jquery.vodpod.js">Download the toolkit</a></p>
+
+  <p>In general, you'll be calling get() with some <code>path</code>, <code>options</code>, and <code>callbacks</code> to be called on response.</p>
+
+<code class="block">vodpod.api_key = 'a3782f...';
+vodpod.get('/me', {include: 'videos'}, {success: function(user) {
+  alert(user.name + "'s first video is " + user.videos[0].title);
+}});</code>
+
+  <p>You can pass the path as an array of strings, which will be automatically joined. You can also specify an <code>error</code> callback, which will be invoked when an API error or connection problem occurs. Finally, you can set default options to include with every request by changing <code>vodpod.options</code>.</p>
+
+</div>

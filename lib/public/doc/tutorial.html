@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet">
+
+<h1><a href="/v2/doc">API</a> Tutorial</h1>
+
+<h2>Collections</h2>
+
+<p>You already know that <code>/me</code> shows you information about your user account at vodpod. But the real meat of the API lies in its ability to query <em>collections</em> and <em>videos</em>. For example, <a href="http://api.vodpod.com/v2/my/collections">http://api.vodpod.com/v2/my/collections</a> shows you a <em>list of your collections</em>. Usually there's just one default collection, named after your username.</p>
+
+<code class="block">[
+  true,
+  {
+    "total": 1,
+    "results": [
+      {
+        "description": null,
+        "key": "aphyr",
+        "name": "aphyr's videos",
+        "videos_count": 49
+      }
+    ]
+  }
+]</code>
+
+<p>You may have noticed by now that we didn't just get an array of videos back.
+Every JSON call returns some additional information built into the response. The first element of the returned array is a <em>status code</em>: <code>true</code> for a successful request, and <code>false</code> for an error. The second element of the array is the data, or an error message.</p>
+
+<p>How about investigating <em>one collection in particular</em>? Try <a href="http://api.vodpod.com/v2/my/collections/xxx">http://api.vodpod.com/v2/my/collections/xxx</a>, where <code>xxx</code> is the key of one of your collections.</p>
+
+<code class="block">[
+  true,
+  {
+    "description": null,
+    "key": "aphyr",
+    "name": "aphyr's videos",
+    "videos_count": 49
+  }
+]</code>
+
+<p>Lets reach a little deeper by using the <code>include</code> parameter to <em>fetch additional data</em>. We'll use <code>/my/collection</code> as an alias for <code>/my/collections/my_default_collection</code>.</p>
+
+<p><a href="http://api.vodpod.com/v2/my/collection?include=videos,tags">http://api.vodpod.com/v2/my/collection?include=videos,tags</a></p>
+
+<code class="block">[
+  true,
+  {
+    &quot;description&quot;: null,
+    &quot;key&quot;: &quot;aphyr&quot;,
+    &quot;name&quot;: &quot;aphyr's videos&quot;,
+    &quot;videos_count&quot;: 49,
+    &quot;videos&quot;: [
+      {
+        &quot;created_at&quot;: &quot;2009-09-04T11:55:30-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed allowscriptaccess=\&quot;never\&quot; src=\&quot;http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=1896628&amp;fullscreen=1\&quot; type=\&quot;application/x-shockwave-flash\&quot; wmode=\&quot;transparent\&quot;  width=\&quot;100%\&quot; height=\&quot;100%\&quot;  allowScriptAccess=\&quot;always\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2150017,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2150017.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Lethal Frisbee - CollegeHumor video&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-09-03T10:42:04-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed wmode=\&quot;transparent\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowfullscreen=\&quot;true\&quot; src=\&quot;http://cdn.abclocal.go.com/static/flash/embeddedPlayer/swf/otvEmLoader.swf?version=&amp;station=wpvi&amp;section=&amp;mediaId=6996090&amp;cdnRoot=http://cdn.abclocal.go.com&amp;webRoot=http://abclocal.go.com&amp;site=\&quot; id=\&quot;otvPlayer\&quot; allowscriptaccess=\&quot;never\&quot; height=\&quot;100%\&quot; allownetworking=\&quot;all\&quot; width=\&quot;100%\&quot; /&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2144690,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2144690.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Apple Heist Empties Store in Just 31 Seconds | Gadget Lab | Wired.com&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-31T11:37:50-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/a4lJ9vsZjMU&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=en&amp;fs=1\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2131515,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2131515.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Hitler finds out Americans are calling each other Nazis&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-28T15:28:51-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/GhTtsZATwBQ&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=en&amp;fs=1&amp;rel=0\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2114216,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2114216.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Nokia N900: Gorgeous phone thinks it's a tablet | DVICE&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-27T15:51:14-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/7dJ1VhXj9IM&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=pt-br&amp;fs=1&amp;\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 1847669,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/1847669.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Imogen Heap - Ellipse Album Trailer&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-25T15:22:42-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/6ULdaSrYGLQ&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=en&amp;fs=1&amp;\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2105905,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2105905.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Sinead's Hand&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-24T11:52:42-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/4qsWFFuYZYI&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=fr&amp;fs=1&amp;\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2094710,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2094710.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;8-bit trip&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-20T19:38:55-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/IjQxIRWZu0c&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showsearch=0&amp;\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 1439870,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/1439870.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Evolution- Le parkour&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-20T16:20:52-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed allowscriptaccess=\&quot;never\&quot; wmode=\&quot;transparent\&quot; src=\&quot;http://vimeo.com/moogaloop.swf?clip_id=6045312\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowScriptAccess=\&quot;never\&quot; height=\&quot;100%\&quot; width=\&quot;100%\&quot; /&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2049101,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2049101.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;The most amazing, beautiful and realistic piece of computer art I have ever seen. \u2013 The Next Web&quot;
+      },
+      {
+        &quot;created_at&quot;: &quot;2009-08-20T16:09:12-05:00&quot;,
+        &quot;embed&quot;: &quot;&lt;embed src=\&quot;http://www.youtube.com/v/1yH_j8-VVLo&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;autoplay=&amp;fs=1&amp;showinfo=0&amp;showsearch=0&amp;rel=0&amp;hl=en&amp;fs=1&amp;rel=0&amp;color1=0x006699&amp;color2=0x54abd6&amp;border=1\&quot; type=\&quot;application/x-shockwave-flash\&quot; allowscriptaccess=\&quot;always\&quot; allowfullscreen=\&quot;true\&quot; wmode=\&quot;opaque\&quot; width=\&quot;100%\&quot; height=\&quot;100%\&quot; id=\&quot;myytplayer\&quot;&gt;&lt;/embed&gt;&quot;,
+        &quot;key&quot;: 2082892,
+        &quot;thumbnail&quot;: &quot;http://img.vodpod.com/2082892.medium100.jpg&quot;,
+        &quot;title&quot;: &quot;Munctional : Functional coding for men&quot;
+      }
+    ],
+    &quot;tags&quot;: [
+      {
+        &quot;key&quot;: &quot;funny&quot;,
+        &quot;name&quot;: &quot;funny&quot;,
+        &quot;count&quot;: 14
+      },
+      {
+        &quot;key&quot;: &quot;awesome&quot;,
+        &quot;name&quot;: &quot;awesome&quot;,
+        &quot;count&quot;: 6
+      },
+      {
+        &quot;key&quot;: &quot;music&quot;,
+        &quot;name&quot;: &quot;music&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;key&quot;: &quot;trailer&quot;,
+        &quot;name&quot;: &quot;trailer&quot;,
+        &quot;count&quot;: 4
+      },
+      {
+        &quot;key&quot;: &quot;ruby&quot;,
+        &quot;name&quot;: &quot;ruby&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;key&quot;: &quot;neotokyo&quot;,
+        &quot;name&quot;: &quot;neotokyo&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;key&quot;: &quot;_why&quot;,
+        &quot;name&quot;: &quot;_why&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;key&quot;: &quot;game&quot;,
+        &quot;name&quot;: &quot;game&quot;,
+        &quot;count&quot;: 3
+      },
+      {
+        &quot;key&quot;: &quot;videogame&quot;,
+        &quot;name&quot;: &quot;videogame&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;gay&quot;,
+        &quot;name&quot;: &quot;gay&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;parkour&quot;,
+        &quot;name&quot;: &quot;parkour&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;science fiction&quot;,
+        &quot;name&quot;: &quot;science fiction&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;apple&quot;,
+        &quot;name&quot;: &quot;apple&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;math&quot;,
+        &quot;name&quot;: &quot;math&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;future-occupation?&quot;,
+        &quot;name&quot;: &quot;future-occupation?&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;cat&quot;,
+        &quot;name&quot;: &quot;cat&quot;,
+        &quot;count&quot;: 2
+      },
+      {
+        &quot;key&quot;: &quot;particle systems&quot;,
+        &quot;name&quot;: &quot;particle systems&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;key&quot;: &quot;software&quot;,
+        &quot;name&quot;: &quot;software&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;key&quot;: &quot;science&quot;,
+        &quot;name&quot;: &quot;science&quot;,
+        &quot;count&quot;: 1
+      },
+      {
+        &quot;key&quot;: &quot;programming&quot;,
+        &quot;name&quot;: &quot;programming&quot;,
+        &quot;count&quot;: 1
+      }
+    ]
+  }
+]</code>
+
+<p>Wow! Not only do we have the collection information, but we now have an idea of the videos inside it, and the top tags. Each tag includes a <code>count</code> attribute, which tells you how many videos in the collection were tagged with it. You can use this information to build a <em>tag cloud</em>.</p>
+
+<p>There are <a href="/v2/doc/objects/Collection.html">lots of attributes</a> to explore; the defaults are only the beginning.</p>
+
+<h2>Videos</h2>
+
+<p>What about the videos I've collected? Use <a href="http://api.vodpod.com/v2/my/videos">http://api.vodpod.com/v2/my/videos</a> to see <em>all your videos</em>, ordered chronologically.</p>
+
+<code class="block">[true,
+  {
+    &quot;total&quot;: 49,
+    &quot;results&quot;: [
+      {
+        &quot;autoplay_embed&quot;: &quot;&lt;embed allowscriptaccess=\&quot;never\&quot; src=\&quot;http:\/\/www.collegehumor.com\/moogaloop\/moogaloop.swf?clip_id=1896628&amp;fullscreen=1\&quot; flashvars=\&quot;autoPlay=true&amp;autoplay=true&amp;autoStart=1&amp;ap=1&amp;autoplay=1&amp;ip=true&amp;autostart=true\&quot; type=\&quot;application\/x-shockwave-flash\&quot; wmode=\&quot;transparent\&quot;  width=\&quot;100%\&quot; height=\&quot;100%\&quot;  allowScriptAccess=\&quot;always\&quot;&gt;&lt;\/embed&gt;&quot;,
+        &quot;total_views&quot;: 6,
+        &quot;created_at&quot;: &quot;2009-09-04T11:55:30-05:00&quot;,
+        &quot;title&quot;: &quot;Lethal Frisbee - CollegeHumor video&quot;,
+        &quot;video_host&quot;: {
+          &quot;url&quot;: &quot;http:\/\/www.collegehumor.com\/video:1896628&quot;,
+          &quot;domain&quot;: &quot;collegehumor.com&quot;,
+          &quot;description&quot;: &quot;&quot;
+
+        },
+        &quot;thumbnail&quot;: &quot;http:\/\/img.vodpod.com\/2150017.medium100.jpg&quot;,
+        &quot;down_votes&quot;: 0,
+        &quot;url&quot;: &quot;http:\/\/vodpod.com\/watch\/2150017-lethal-frisbee-collegehumor-video?pod=aphyr&quot;,
+        &quot;up_votes&quot;: 0,
+        &quot;embed&quot;: &quot;&lt;embed allowscriptaccess=\&quot;never\&quot; src=\&quot;http:\/\/www.collegehumor.com\/moogaloop\/moogaloop.swf?clip_id=1896628&amp;fullscreen=1\&quot; type=\&quot;application\/x-shockwave-flash\&quot; wmode=\&quot;transparent\&quot;  width=\&quot;100%\&quot; height=\&quot;100%\&quot;  allowScriptAccess=\&quot;always\&quot;&gt;&lt;\/embed&gt;&quot;,
+        &quot;description&quot;: &quot;Some of Mark&#39;s hammer&#39;s have reminded me of this.&quot;,
+        &quot;key&quot;: 2150017
+      },
+    ...</code>
+
+<p>Now we're talking! You've got enough information in that list to display videos on a web page, figure out how popular they are, or show thumbnails for a widget.</p>
+
+<p>You can <em>filter videos by tags</em>, too! For example, to find all your videos that are tagged "awesome", try <a href="http://api.vodpod.com/v2/my/videos?tags=awesome">/my/videos?tags=awesome</a>.</p>
+
+<p>You can specify more than one tag, too, and control whether to filter by <em>any</em> or <em>all</em> tags given. Use <a href="http://api.vodpod.com/v2/my/videos?tags=cat,dog&tag_mode=any">/my/videos?tags=cat,dog&tag_mode=any</a> to find videos tagged either "cat" or "dog". Use Use <a href="http://api.vodpod.com/v2/my/videos?tags=cat,dog&tag_mode=any">/my/videos?tags=cat,dog&tag_mode=all</a> to find videos tagged with both.</p>
+
+<h2>Getting More Specific</h2>
+
+<p>The Vodpod database is sort of like a tree. Users have collections, which contain many CollectionVideos, which are each an aspect of some general Video. We've been using shortcuts to make things simpler, but it's time to explore more of the structure available for your queries.</p>
+
+<p><a href="http://api.vodpod.com/v2/videos">/videos</a> finds videos from <em>all over</em> the Vodpod database. If somebody collected it, it's probably here.</p>
+<p><a href="http://api.vodpod.com/v2/users">/users</a> gives you access to all users.</p>
+
+<p>Users, as we've seen, have videos that they've collected: <a href="http://api.vodpod.com/v2/users/aphyr/videos">/users/aphyr/videos</a> shows all videos collected by aphyr. <code>/my/videos</code> works just like this: <code>/my</code> transparently expands to <code>/users/your_user_name</code>.</p>
+
+<p>You can also pick out <em>videos in a specific collection</em> belonging to a user. Try <a href="http://api.vodpod.com/v2/users/spencer/collections/electro/videos">/users/spencer/collections/electro/videos</a> to see some of Spencer's videos in his Electro collection.</p>
+
+<h2>Comments</h2>
+
+<p><em>Comments made on videos</em> at Vodpod are available in two ways. You
+can use <code>include=comments</code> when you fetch a video, or use the
+dedicated comments paths for extra control. Try <a
+href="http://api.vodpod.com/v2/users/aphyr/videos/2144690/comments">users/aphyr/videos/2144690/comments</a>
+to see the comments on a video.</p>
+
+<p> Comments are shared between all versions of a
+video: if Alice and Bob both collect a video and comments are made on each
+version, the comments appear together on both.</p>
+
+<h2>Pagination</h2>
+
+<p>When you request a <em>list</em> of items (i.e. /videos, /collections, and so on), the result contains some extra metadata to help you navigate the set. Result sets are given as hashes with two keys:</p>
+
+<ul>
+  <li><code>total</code> indicates the total number of items available.</li>
+  <li><code>results</code> is an array of objects matching your request.</li>
+</ul>
+
+<p>What if you wanted <em>more results</em> back at a time? Use the <code>limit</code> parameter: <a href="http://api.vodpod.com/v2/my/videos?limit=25">http://api.vodpod.com/v2/my/videos?limit=25</a></p>
+
+<p>You can use the <code>page</code> parameter to <em>get the next batch of
+results</em>. For finer control, use <code>offset</code> to start your query at
+a specific result number.</p>
+
+<h2>Formats</h2>
+
+<p>Every request you make to the Vodpod API can come back in either <em>XML</em> or <em>JSON</em>. If you want <em>XML</em>, just tack on <code>.xml</code> to the end of the request, like so:</p>
+
+<code class="block">/my/videos.xml</code>
+
+<p>Likewise, for <em>JSON</em>,</p>
+
+<code class="block">/my/videos.json</code>
+
+<p>These will return correct <em>mime-types</em> (text/xml and application/json), which your browser may not know how to handle. Without any extension, the API hands back pretty-printed JSON as text/plain.</p>
+
+<h2>Have Fun!</h2>
+
+<p>Head back to the <a href="/v2/doc">index</a> to read up on the object model and HTTP paths available. Try it out, and see what you like!</a>.
+
+<p><em>In the next few weeks</em>, we'll be making performance improvements as well as releasing API toolkits for PHP, Javascript, and Ruby. In the meantime, feel free to start designing applications, and give us your feedback <a href="http://groups.google.com/group/vodpod-api">through the Google Group</a>.</p>

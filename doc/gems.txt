@@ -1,0 +1,6 @@
+Running:
+sudo gem install --no-rdoc --no-ri libxml-ruby crypt ramaze sequel construct aws-s3 json thin mysql nokogiri memcache-client system-timer trollop twitter fattr yajl-ruby starling curb oauth mechanize
+sudo apt-get install mpeg4ip-server memcached
+
+Testing:
+sudo gem install bacon rack-test

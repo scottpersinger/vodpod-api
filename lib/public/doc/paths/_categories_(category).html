@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /categories/&lt;category&gt;</h1><div class="description"><p>A specific <a href="/v2/doc/objects/Category.html">Category</a>. You can continue nesting category names to descend
+into subcategories; for example, _/categories/music/country.</p></div><div class="params"><h3>Parameters</h3><dl><dt>api_key</dt><dd>API key.</dd><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/categories/funny</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;category&gt;
+  &lt;key&gt;funny&lt;/key&gt;
+  &lt;name&gt;Funny&lt;/name&gt;
+  &lt;top_users&gt;
+    &lt;user&gt;
+      &lt;key&gt;dandelionsalad&lt;/key&gt;
+      &lt;name&gt;dandelionsalad&lt;/name&gt;
+      &lt;points&gt;403&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/260087.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;djunrein&lt;/key&gt;
+      &lt;name&gt;djunrein&lt;/name&gt;
+      &lt;points&gt;333&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/459990.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;reechard&lt;/key&gt;
+      &lt;name&gt;reechard&lt;/name&gt;
+      &lt;points&gt;178&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/465577.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;dpmalone&lt;/key&gt;
+      &lt;name&gt;dpmalone&lt;/name&gt;
+      &lt;points&gt;127&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;dayandadream&lt;/key&gt;
+      &lt;name&gt;dayandadream&lt;/name&gt;
+      &lt;points&gt;92&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/591886.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;pkulak&lt;/key&gt;
+      &lt;name&gt;pkulak&lt;/name&gt;
+      &lt;points&gt;87&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;vitrinedtv&lt;/key&gt;
+      &lt;name&gt;vitrinedtv&lt;/name&gt;
+      &lt;points&gt;76&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;hoodhollywoodpromo&lt;/key&gt;
+      &lt;name&gt;HoodHollywoodPromo&lt;/name&gt;
+      &lt;points&gt;71&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;froggertv&lt;/key&gt;
+      &lt;name&gt;froggertv&lt;/name&gt;
+      &lt;points&gt;70&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;ampedstatuscom&lt;/key&gt;
+      &lt;name&gt;AmpedStatus.com&lt;/name&gt;
+      &lt;points&gt;70&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/489626.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;nightsector1&lt;/key&gt;
+      &lt;name&gt;Night Sector 1&lt;/name&gt;
+      &lt;points&gt;65&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/648838.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;blackrabbit&lt;/key&gt;
+      &lt;name&gt;blackrabbit&lt;/name&gt;
+      &lt;points&gt;64&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;mbrbdb&lt;/key&gt;
+      &lt;name&gt;mbrbdb&lt;/name&gt;
+      &lt;points&gt;62&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;towleroad&lt;/key&gt;
+      &lt;name&gt;towleroad&lt;/name&gt;
+      &lt;points&gt;58&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/110511.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;juxxist&lt;/key&gt;
+      &lt;name&gt;juxxist&lt;/name&gt;
+      &lt;points&gt;58&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;mikedreams&lt;/key&gt;
+      &lt;name&gt;Mike Dreams&lt;/name&gt;
+      &lt;points&gt;58&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/453786.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;gotengoku21&lt;/key&gt;
+      &lt;name&gt;gotengoku21&lt;/name&gt;
+      &lt;points&gt;58&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;bdwete&lt;/key&gt;
+      &lt;name&gt;bdwete&lt;/name&gt;
+      &lt;points&gt;57&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+  &lt;/top_users&gt;
+  &lt;recommended_users&gt;
+    &lt;user&gt;
+      &lt;key&gt;ktucker&lt;/key&gt;
+      &lt;name&gt;ktucker&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;1gleefan&lt;/key&gt;
+      &lt;name&gt;1 Glee Fan&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/879875.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;skeim01&lt;/key&gt;
+      &lt;name&gt;skeim01&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;switched&lt;/key&gt;
+      &lt;name&gt;switched&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/494185.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;juxie2469&lt;/key&gt;
+      &lt;name&gt;juxie2469&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/902307.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;chrisbmartin&lt;/key&gt;
+      &lt;name&gt;ChrisBMartin&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/665362.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;cheezburgernetwork&lt;/key&gt;
+      &lt;name&gt;Cheezburger Network&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/626233.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;thened&lt;/key&gt;
+      &lt;name&gt;thened&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;dangurewitch&lt;/key&gt;
+      &lt;name&gt;DanGurewitch&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/302445.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;paulie_walnuts&lt;/key&gt;
+      &lt;name&gt;paulie_walnuts&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/466384.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;masti69&lt;/key&gt;
+      &lt;name&gt;masti69&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail/&gt;
+    &lt;/user&gt;
+    &lt;user&gt;
+      &lt;key&gt;buzzflash&lt;/key&gt;
+      &lt;name&gt;buzzflash&lt;/name&gt;
+      &lt;points&gt;0&lt;/points&gt;
+      &lt;thumbnail&gt;http://s3.vpimg.net/vodpod.com.users.image/331734.medium.jpg&lt;/thumbnail&gt;
+    &lt;/user&gt;
+  &lt;/recommended_users&gt;
+&lt;/category&gt;
+</pre></code></td><td class="json"><code><pre>[
+  true,
+  {
+    &quot;name&quot;: &quot;Funny&quot;,
+    &quot;recommended_users&quot;: [
+      {
+        &quot;name&quot;: &quot;ktucker&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;ktucker&quot;
+      },
+      {
+        &quot;name&quot;: &quot;1 Glee Fan&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/879875.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;1gleefan&quot;
+      },
+      {
+        &quot;name&quot;: &quot;skeim01&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;skeim01&quot;
+      },
+      {
+        &quot;name&quot;: &quot;switched&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/494185.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;switched&quot;
+      },
+      {
+        &quot;name&quot;: &quot;juxie2469&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/902307.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;juxie2469&quot;
+      },
+      {
+        &quot;name&quot;: &quot;ChrisBMartin&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/665362.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;chrisbmartin&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Cheezburger Network&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/626233.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;cheezburgernetwork&quot;
+      },
+      {
+        &quot;name&quot;: &quot;thened&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;thened&quot;
+      },
+      {
+        &quot;name&quot;: &quot;DanGurewitch&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/302445.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;dangurewitch&quot;
+      },
+      {
+        &quot;name&quot;: &quot;paulie_walnuts&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/466384.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;paulie_walnuts&quot;
+      },
+      {
+        &quot;name&quot;: &quot;masti69&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;masti69&quot;
+      },
+      {
+        &quot;name&quot;: &quot;buzzflash&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/331734.medium.jpg&quot;,
+        &quot;points&quot;: 0,
+        &quot;key&quot;: &quot;buzzflash&quot;
+      }
+    ],
+    &quot;key&quot;: &quot;funny&quot;,
+    &quot;top_users&quot;: [
+      {
+        &quot;name&quot;: &quot;dandelionsalad&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/260087.medium.jpg&quot;,
+        &quot;points&quot;: 403,
+        &quot;key&quot;: &quot;dandelionsalad&quot;
+      },
+      {
+        &quot;name&quot;: &quot;djunrein&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/459990.medium.jpg&quot;,
+        &quot;points&quot;: 333,
+        &quot;key&quot;: &quot;djunrein&quot;
+      },
+      {
+        &quot;name&quot;: &quot;reechard&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/465577.medium.jpg&quot;,
+        &quot;points&quot;: 178,
+        &quot;key&quot;: &quot;reechard&quot;
+      },
+      {
+        &quot;name&quot;: &quot;dpmalone&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 127,
+        &quot;key&quot;: &quot;dpmalone&quot;
+      },
+      {
+        &quot;name&quot;: &quot;dayandadream&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/591886.medium.jpg&quot;,
+        &quot;points&quot;: 92,
+        &quot;key&quot;: &quot;dayandadream&quot;
+      },
+      {
+        &quot;name&quot;: &quot;pkulak&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/11221.medium.jpg&quot;,
+        &quot;points&quot;: 87,
+        &quot;key&quot;: &quot;pkulak&quot;
+      },
+      {
+        &quot;name&quot;: &quot;vitrinedtv&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 76,
+        &quot;key&quot;: &quot;vitrinedtv&quot;
+      },
+      {
+        &quot;name&quot;: &quot;HoodHollywoodPromo&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 71,
+        &quot;key&quot;: &quot;hoodhollywoodpromo&quot;
+      },
+      {
+        &quot;name&quot;: &quot;froggertv&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 70,
+        &quot;key&quot;: &quot;froggertv&quot;
+      },
+      {
+        &quot;name&quot;: &quot;AmpedStatus.com&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/489626.medium.jpg&quot;,
+        &quot;points&quot;: 70,
+        &quot;key&quot;: &quot;ampedstatuscom&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Night Sector 1&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/648838.medium.jpg&quot;,
+        &quot;points&quot;: 65,
+        &quot;key&quot;: &quot;nightsector1&quot;
+      },
+      {
+        &quot;name&quot;: &quot;blackrabbit&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/847684.medium.jpg&quot;,
+        &quot;points&quot;: 64,
+        &quot;key&quot;: &quot;blackrabbit&quot;
+      },
+      {
+        &quot;name&quot;: &quot;mbrbdb&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 62,
+        &quot;key&quot;: &quot;mbrbdb&quot;
+      },
+      {
+        &quot;name&quot;: &quot;towleroad&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/110511.medium.jpg&quot;,
+        &quot;points&quot;: 58,
+        &quot;key&quot;: &quot;towleroad&quot;
+      },
+      {
+        &quot;name&quot;: &quot;juxxist&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 58,
+        &quot;key&quot;: &quot;juxxist&quot;
+      },
+      {
+        &quot;name&quot;: &quot;Mike Dreams&quot;,
+        &quot;thumbnail&quot;: &quot;http://s3.vpimg.net/vodpod.com.users.image/453786.medium.jpg&quot;,
+        &quot;points&quot;: 58,
+        &quot;key&quot;: &quot;mikedreams&quot;
+      },
+      {
+        &quot;name&quot;: &quot;gotengoku21&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 58,
+        &quot;key&quot;: &quot;gotengoku21&quot;
+      },
+      {
+        &quot;name&quot;: &quot;bdwete&quot;,
+        &quot;thumbnail&quot;: null,
+        &quot;points&quot;: 57,
+        &quot;key&quot;: &quot;bdwete&quot;
+      }
+    ]
+  }
+]</pre></code></td></tr></table></div></div></body></html>

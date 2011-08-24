@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../lib/vodpod-api', File.dirname(__FILE__))
+require 'trollop'
+
+# Option Parsing
+SUB_COMMANDS = %w(start stop restart)
+opts = Trollop::options do
+  version "vodpod-api #{API::VERSION}"
+
+  stop_on SUB_COMMANDS
+end
+
+cmd = ARGV.shift
+cmd_opts = case cmd
+  when "start"
+    Trollop::options do
+      opt :port, 'Port', :type => :int
+    end
+  when "stop"
+    #
+  when "restart"
+    #
+  else
+    Trollop::die "unknown subcommand #{cmd.inspect}"
+end
+
+case cmd
+when "start"
+  API.init
+  if cmd_opts[:port]
+    API.config.server.port = cmd_opts[:port]
+  end
+  API.start
+when "stop"
+  API.stop
+when "restart"
+  API.init
+  API.restart
+end

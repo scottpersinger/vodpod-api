@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vodpod API 2</title>
+    <link rel="stylesheet" type="text/css" href="http://api.vodpod.com/v2/doc/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body> 
+<div id="sheet"><div class="path"><h1><a href="/v2/doc">API</a>: /videos</h1><div class="description"><p>A list of videos in the entire Vodpod system. You must specify <code>tag</code> to use this path. This path is not sortable.</p></div><div class="params"><h3>Parameters</h3><dl><dt>include</dt><dd>Which attributes will be included in the result set. Some attributes are always provided.</dd><dt>limit</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>offset</dt><dd>How far into the result set to begin returning objects. Offset 0 returns records 0, 1, 2, ... offset 2 returns records 2, 3, 4, ...</dd><dt>page</dt><dd>The page of the results to return. If <code>offset</code> is provided, it takes precedence over <code>page</code>.</dd><dt>per_page</dt><dd>The number of results to return at a time. <code>Limit</code> and <code>per_page</code> are synonyms. If both are provided, <code>limit</code> takes precedence.</dd><dt>tag</dt><dd>A tag to filter the resulting videos by.</dd></dl><div class="clear"></div></div><div class="example"><h3>Example</h3><code>/videos?tag=game&amp;limit=1</code></div><table class="response"><tr><th>XML</th><th>JSON</th></tr><tr><td class="xml"><code><pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;error&gt;
+  &lt;message&gt;you may only list videos belonging to specific tags&lt;/message&gt;
+&lt;/error&gt;
+</pre></code></td><td class="json"><code><pre>[
+  false,
+  {
+    &quot;message&quot;: &quot;you may only list videos belonging to specific tags&quot;
+  }
+]</pre></code></td></tr></table></div></div></body></html>
