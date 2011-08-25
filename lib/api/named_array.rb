@@ -43,4 +43,17 @@ class NamedArray
   def to_json(*a)
     as_json.to_json(*a)
   end
+  
+  def to_hash
+    data = @data.map do |e|
+      if e.respond_to? :to_hash
+        e.to_hash
+      else
+        e
+      end
+    end
+
+    {:total => total, :results => data}
+  end
+    
 end
