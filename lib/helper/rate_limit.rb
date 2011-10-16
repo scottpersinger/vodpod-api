@@ -2,7 +2,7 @@ module Ramaze
   module Helper
     module RateLimit
       INTERVAL = 3600
-      REMAINING = 1000
+      REMAINING = 15000
 
       # This implementation is subject to cache exhaustion; we should use Redis
       # or some other higher-persistence high-performance store. Mysql is
